@@ -45,7 +45,6 @@
 
     <ImageView
         android:id="@+id/imageViewIcon"
-        android:background="@null"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_gravity="center"

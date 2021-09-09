@@ -3,7 +3,7 @@
     package="com.example.weatherapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WeatherApp">
+        <activity
+            android:name=".DetailTinTuc"
+            android:exported="true" />
+        <activity
+            android:name=".TinTuc"
+            android:exported="true" />
         <activity
             android:name=".WeatherNextDay"
             android:exported="true" />

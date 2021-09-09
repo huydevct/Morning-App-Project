@@ -19,7 +19,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
-import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -48,6 +47,7 @@ public class WeatherApp extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String city = edtSearch.getText().toString();
+                city = FixString(city);
                 if(city.equals("")){
                     City = "Hanoi";
                     GetCurrentWeatherData(City);
@@ -69,10 +69,15 @@ public class WeatherApp extends AppCompatActivity {
         });
     }
 
-    private String FixString(String string){
+    public static String FixString(String string){
         // fix string tu Ha Noi -> Hanoi
-        String result = "";
-        return result;
+        String string1[] = string.split("\\s");
+        StringBuilder result = new StringBuilder();
+        string1[0].toUpperCase();
+        for (int i=0; i<string1.length; i++){
+            result.append(string1[i]);
+        }
+        return result.toString();
     }
 
     private void GetCurrentWeatherData(String data){
@@ -111,7 +116,9 @@ public class WeatherApp extends AppCompatActivity {
                             String icon = jsonObjectWeather.getString("icon");
                             String url = "http://openweathermap.org/img/wn/"+icon+"@2x.png";
 
-//                            Glide.with(getApplicationContext()).load(url).into(imgIcon);//error not yet fix
+                            Glide.with(WeatherApp.this)
+                                    .load(url)
+                                    .into(imgIcon);//error not yet fix
 
                             JSONObject jsonObject1Main = jsonObject.getJSONObject("main");
                             // lấy và setText Temparature

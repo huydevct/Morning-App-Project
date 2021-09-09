@@ -43,7 +43,7 @@ public class WeatherNextDay extends AppCompatActivity {
 
         Intent intent = getIntent();
         String city = intent.getStringExtra("city");
-
+        city = WeatherApp.FixString(city);
         if(city.equals("")){
             City = "Hanoi";
             Get7DaysData(City);
