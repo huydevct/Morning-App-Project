@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#D6CCA9"
+    tools:context=".WeatherNextDay">
+    <ImageView
+        android:id="@+id/imageViewBack"
+        android:layout_margin="2dp"
+        android:src="@drawable/back"
+        android:background="@null"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
+    <TextView
+        android:id="@+id/textViewNameCity"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#390808"
+        android:text="Thành Phố"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ListView
+        android:id="@+id/listViewStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
