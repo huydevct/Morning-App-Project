@@ -40,7 +40,8 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:src="@mipmap/ic_launcher"
-                android:layout_height="100dp"/>
+                android:layout_height="100dp"
+                android:scaleType="fitXY"/>
             <TextView
                 android:id="@+id/textViewMaxTemp"
                 android:text="Max Temp"

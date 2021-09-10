@@ -122,11 +122,13 @@ public class WeatherApp extends AppCompatActivity {
                             txtStatus.setText(status);
                             //Icon
                             String icon = jsonObjectWeather.getString("icon");
-                            String url = "http://openweathermap.org/img/wn/"+icon+"@2x.png";
+                            GetIconImage(icon);
 
-                            Glide.with(getApplicationContext())
-                                    .load(url)
-                                    .into(imgIcon);//error not yet fix
+//                            String url = "http://openweathermap.org/img/wn/"+icon+"@2x.png";
+
+//                            Glide.with(getApplicationContext())
+//                                    .load(url)
+//                                    .into(imgIcon);//error not yet fix
 
                             JSONObject jsonObject1Main = jsonObject.getJSONObject("main");
                             // lấy và setText Temparature
@@ -167,6 +169,65 @@ public class WeatherApp extends AppCompatActivity {
                     }
                 });
         requestQueue.add(stringRequest);
+    }
+
+    public void GetIconImage(String icon){
+        switch (icon){
+            case "01d":
+                imgIcon.setImageResource(R.drawable.d01);
+                break;
+            case "01n":
+                imgIcon.setImageResource(R.drawable.n01);
+                break;
+            case "02d":
+                imgIcon.setImageResource(R.drawable.d02);
+                break;
+            case "02n":
+                imgIcon.setImageResource(R.drawable.n02);
+                break;
+            case "03d":
+                imgIcon.setImageResource(R.drawable.d03);
+                break;
+            case "03n":
+                imgIcon.setImageResource(R.drawable.n03);
+                break;
+            case "04d":
+                imgIcon.setImageResource(R.drawable.d04);
+                break;
+            case "04n":
+                imgIcon.setImageResource(R.drawable.n04);
+                break;
+            case "09d":
+                imgIcon.setImageResource(R.drawable.d09);
+                break;
+            case "09n":
+                imgIcon.setImageResource(R.drawable.n09);
+                break;
+            case "10d":
+                imgIcon.setImageResource(R.drawable.d10);
+                break;
+            case "10n":
+                imgIcon.setImageResource(R.drawable.n10);
+                break;
+            case "11d":
+                imgIcon.setImageResource(R.drawable.d11);
+                break;
+            case "11n":
+                imgIcon.setImageResource(R.drawable.n11);
+                break;
+            case "13d":
+                imgIcon.setImageResource(R.drawable.d13);
+                break;
+            case "13n":
+                imgIcon.setImageResource(R.drawable.n13);
+                break;
+            case "50d":
+                imgIcon.setImageResource(R.drawable.d50);
+                break;
+            case "50n":
+                imgIcon.setImageResource(R.drawable.n50);
+                break;
+        }
     }
     private void Anhxa() {
         edtSearch           = findViewById(R.id.editTextSearch);
