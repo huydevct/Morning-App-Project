@@ -3,12 +3,11 @@ package com.example.weatherapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,12 +27,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class WeatherApp extends AppCompatActivity {
-    private final String API_KEY = "71d845b420f0244f5f52c3440f450c9a";
-    EditText edtSearch;
+    AutoCompleteTextView edtSearch;
     Button btnSearch, btnChangeActivity;
     TextView txtCity, txtCountry, txtTemp, txtStatus, txtCloud, txtDay, txtWind, txtHumidity;
     ImageView imgIcon;
     String City = "";
+
+    // hardcode @@
+    private final String [] Citys = {"Ha Noi", "Ho Chi Minh City", "Sai Gon", "London", "France", "America", };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,12 @@ public class WeatherApp extends AppCompatActivity {
 
         Anhxa();
         GetCurrentWeatherData("Hanoi");
+
+        // Auto complete Text
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, Citys);
+        edtSearch.setAdapter(adapter);
+        edtSearch.setThreshold(1);
+        edtSearch.setDropDownHeight(400);
 
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,8 +76,8 @@ public class WeatherApp extends AppCompatActivity {
         });
     }
 
+    // fix string tu Ha Noi -> Hanoi
     public static String FixString(String string){
-        // fix string tu Ha Noi -> Hanoi
         String string1[] = string.split("\\s");
         StringBuilder result = new StringBuilder();
         string1[0].toUpperCase();
@@ -82,7 +89,8 @@ public class WeatherApp extends AppCompatActivity {
 
     private void GetCurrentWeatherData(String data){
         RequestQueue requestQueue = Volley.newRequestQueue(WeatherApp.this);
-        String url = "https://api.openweathermap.org/data/2.5/weather?q="+data+"&appid="+API_KEY+"&units=metric";
+        String API_KEY = "71d845b420f0244f5f52c3440f450c9a";
+        String url = "https://api.openweathermap.org/data/2.5/weather?q="+data+"&appid="+ API_KEY +"&units=metric";
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
@@ -116,7 +124,7 @@ public class WeatherApp extends AppCompatActivity {
                             String icon = jsonObjectWeather.getString("icon");
                             String url = "http://openweathermap.org/img/wn/"+icon+"@2x.png";
 
-                            Glide.with(WeatherApp.this)
+                            Glide.with(getApplicationContext())
                                     .load(url)
                                     .into(imgIcon);//error not yet fix
 

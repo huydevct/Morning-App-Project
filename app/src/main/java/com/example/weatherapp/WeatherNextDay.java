@@ -81,11 +81,12 @@ public class WeatherNextDay extends AppCompatActivity {
                             // setText tên Thành Phố
                             JSONObject jsonObjectCity = jsonObject.getJSONObject("city");
                             String city = jsonObjectCity.getString("name");
-                            txtNameCity.setText(city);
+                            txtNameCity.setText(city + " 7 ngày tới:");
 
                             JSONArray jsonArrayList = jsonObject.getJSONArray("list");
                             for (int i=0; i<jsonArrayList.length(); i++){
                                 JSONObject jsonObjectList = jsonArrayList.getJSONObject(i);
+
                                 //lấy dữ liệu cho time
                                 String day = jsonObjectList.getString("dt");
                                 long lday = Long.valueOf(day);
@@ -94,10 +95,12 @@ public class WeatherNextDay extends AppCompatActivity {
                                 String Day = simpleDateFormat.format(date);
 
                                 JSONObject jsonObjectTemp = jsonObjectList.getJSONObject("main");
+
                                 // lấy dữ liệu cho max temp
                                 String maxTemp = jsonObjectTemp.getString("temp_max");
                                 Double maxTempD = Double.valueOf(maxTemp);
                                 String MaxTemp = String.valueOf(maxTempD.intValue());
+
                                 //lấy dữ liệu cho min temp
                                 String minTemp = jsonObjectTemp.getString("temp_min");
                                 Double minTempD = Double.valueOf(minTemp);
@@ -121,7 +124,6 @@ public class WeatherNextDay extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
                     }
                 });
 

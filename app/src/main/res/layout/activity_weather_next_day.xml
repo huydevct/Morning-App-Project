@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/imageViewBack"
         android:layout_margin="2dp"
-        android:src="@drawable/back"
+        android:src="@drawable/back_icon"
         android:background="@null"
         android:layout_width="50dp"
         android:layout_height="50dp"/>

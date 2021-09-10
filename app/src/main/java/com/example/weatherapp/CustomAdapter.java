@@ -53,7 +53,7 @@ public class CustomAdapter extends BaseAdapter {
         Glide.with(context).load("http://openweathermap.org/img/wn/"+thoiTiet.Image+"@2x.png").into(imgStatus);//error
 
         txtDay.setText(thoiTiet.Day);
-        txtStatus.setText(thoiTiet.Status + " Trong 7 Ngày:");
+        txtStatus.setText(thoiTiet.Status );
         txtMaxTemp.setText(thoiTiet.MaxTemp + "°C");
         txtMinTemp.setText(thoiTiet.MinTemp + "°C");
 
