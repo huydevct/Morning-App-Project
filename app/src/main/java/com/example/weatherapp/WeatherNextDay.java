@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -27,12 +28,14 @@ import java.util.Date;
 
 public class WeatherNextDay extends AppCompatActivity {
     private final String API_KEY = "71d845b420f0244f5f52c3440f450c9a";
+    private final String [] Days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
     String City = "";
     ImageView imgBack;
     TextView txtNameCity;
     ListView lvStatus;
     CustomAdapter adapter;
     ArrayList<ThoiTiet> arrayList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,18 +84,14 @@ public class WeatherNextDay extends AppCompatActivity {
                             // setText tên Thành Phố
                             JSONObject jsonObjectCity = jsonObject.getJSONObject("city");
                             String city = jsonObjectCity.getString("name");
-                            txtNameCity.setText(city + " 7 ngày tới:");
+                            txtNameCity.setText(city);
 
                             JSONArray jsonArrayList = jsonObject.getJSONArray("list");
                             for (int i=0; i<jsonArrayList.length(); i++){
                                 JSONObject jsonObjectList = jsonArrayList.getJSONObject(i);
 
-                                //lấy dữ liệu cho time
-                                String day = jsonObjectList.getString("dt");
-                                long lday = Long.valueOf(day);
-                                Date date = new Date(lday*1000L);
-                                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE yyyy-MM-dd");
-                                String Day = simpleDateFormat.format(date);
+                                // set text Day
+                                String Day = Days[i];
 
                                 JSONObject jsonObjectTemp = jsonObjectList.getJSONObject("main");
 

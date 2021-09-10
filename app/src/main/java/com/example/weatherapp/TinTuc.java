@@ -36,7 +36,6 @@ public class TinTuc extends AppCompatActivity {
         lvTinTuc = findViewById(R.id.listViewTinTuc);
         docBaoArrayList = new ArrayList<DocBao>();
 
-
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -80,6 +79,7 @@ public class TinTuc extends AppCompatActivity {
                 if (matcher.find()){
                     image = matcher.group(1);
                 }
+
                 Element element = (Element) nodeList.item(i);
                 title = parser.getValue(element, "title");
                 link = parser.getValue(element, "link");

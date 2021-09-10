@@ -33,6 +33,7 @@ public class TinTucAdapter extends ArrayAdapter<DocBao> {
             txtTitle.setText(docBao.getTitle());
 
             ImageView imageView = view.findViewById(R.id.imageViewTinTuc);
+
             Glide.with(getContext()).load(docBao.getImage()).into(imageView);
 
         }

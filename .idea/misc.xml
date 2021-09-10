@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/bg_custom.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/btn_bg.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/btn_custom.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/ic_cloud.xml" value="0.371875" />
         <entry key="app/src/main/res/layout/activity_detail_tin_tuc.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.340625" />

@@ -5,24 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#D6CCA9"
+    android:background="@drawable/bg_custom"
     tools:context=".WeatherNextDay">
-    <ImageView
-        android:id="@+id/imageViewBack"
-        android:layout_margin="2dp"
-        android:src="@drawable/back_icon"
-        android:background="@null"
-        android:layout_width="50dp"
-        android:layout_height="50dp"/>
-    <TextView
-        android:id="@+id/textViewNameCity"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:textColor="#390808"
-        android:text="Thành Phố"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/imageViewBack"
+            android:layout_margin="2dp"
+            android:src="@drawable/back_icon"
+            android:background="@null"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+        <TextView
+            android:id="@+id/textViewNameCity"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:layout_marginLeft="70dp"
+            android:text="Thành Phố"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <Space
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="20dp"/>
     <ListView
+        android:padding="5dp"
         android:id="@+id/listViewStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

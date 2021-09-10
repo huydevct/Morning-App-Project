@@ -4,11 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -27,14 +26,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class WeatherApp extends AppCompatActivity {
-    AutoCompleteTextView edtSearch;
-    Button btnSearch, btnChangeActivity;
-    TextView txtCity, txtCountry, txtTemp, txtStatus, txtCloud, txtDay, txtWind, txtHumidity;
+    EditText edtSearch;
+    Button btnSearch;
+    LinearLayout linearChangeActivity;
+    TextView txtCity, txtTemp, txtStatus, txtCloud, txtDay, txtWind, txtHumidity, txtMinTempMain, txtMaxTempMain, txtSunrise, txtSunset;
     ImageView imgIcon;
     String City = "";
 
-    // hardcode @@
-    private final String [] Citys = {"Ha Noi", "Ho Chi Minh City", "Sai Gon", "London", "France", "America", };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,35 +42,23 @@ public class WeatherApp extends AppCompatActivity {
         Anhxa();
         GetCurrentWeatherData("Hanoi");
 
-        // Auto complete Text
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, Citys);
-        edtSearch.setAdapter(adapter);
-        edtSearch.setThreshold(1);
-        edtSearch.setDropDownHeight(400);
-
-        btnSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String city = edtSearch.getText().toString();
-                city = FixString(city);
-                if(city.equals("")){
-                    City = "Hanoi";
-                    GetCurrentWeatherData(City);
-                }else {
-                    City = city;
-                    GetCurrentWeatherData(City);
-                }
+        btnSearch.setOnClickListener(view -> {
+            String city = edtSearch.getText().toString();
+            city = FixString(city);
+            if(city.equals("")){
+                City = "Hanoi";
+                GetCurrentWeatherData(City);
+            }else {
+                City = city;
+                GetCurrentWeatherData(City);
             }
         });
 
-        btnChangeActivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String city = edtSearch.getText().toString();
-                Intent intent = new Intent(WeatherApp.this, WeatherNextDay.class);
-                intent.putExtra("city", city);
-                startActivity(intent);
-            }
+        linearChangeActivity.setOnClickListener(view -> {
+            String city = edtSearch.getText().toString();
+            Intent intent = new Intent(WeatherApp.this, WeatherNextDay.class);
+            intent.putExtra("city", city);
+            startActivity(intent);
         });
     }
 
@@ -102,16 +88,15 @@ public class WeatherApp extends AppCompatActivity {
 
                             // lấy tên thành phố
                             String name = jsonObject.getString("name");
-                            txtCity.setText("Thành Phố: " + name);
+                            txtCity.setText(name);
 
                             // định dạng lại và setText cho Ngày
                             String day = jsonObject.getString("dt");
                             long lday = Long.valueOf(day);
                             Date date = new Date(lday*1000L);
-                            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE yyyy-MM-dd HH-mm-ss");
+                            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm a");
                             String Day = simpleDateFormat.format(date);
                             txtDay.setText(Day);
-
 
                             JSONArray jsonArrayWeather = jsonObject.getJSONArray("weather");
                             JSONObject jsonObjectWeather = jsonArrayWeather.getJSONObject(0);
@@ -120,14 +105,13 @@ public class WeatherApp extends AppCompatActivity {
                             //Status
                             String status = jsonObjectWeather.getString("main");
                             txtStatus.setText(status);
+
                             //Icon
                             String icon = jsonObjectWeather.getString("icon");
-                            GetIconImage(icon);
-
+                            GetIconImage(icon, imgIcon);
 //                            String url = "http://openweathermap.org/img/wn/"+icon+"@2x.png";
-
-//                            Glide.with(getApplicationContext())
-//                                    .load(url)
+//
+//                            Glide.with(WeatherApp.this).load(url)
 //                                    .into(imgIcon);//error not yet fix
 
                             JSONObject jsonObject1Main = jsonObject.getJSONObject("main");
@@ -136,6 +120,18 @@ public class WeatherApp extends AppCompatActivity {
                             Double tempD = Double.valueOf(temp);
                             String Temp = String.valueOf(tempD.intValue());
                             txtTemp.setText(Temp+"°C");
+
+                            //Min Temp
+                            String minTemp = jsonObject1Main.getString("temp_min");
+                            Double minTempD = Double.valueOf(minTemp);
+                            String MinTemp = String.valueOf(minTempD.intValue());
+                            txtMinTempMain.setText("Min: " + MinTemp + "°C");
+
+                            //Max Temp
+                            String maxTemp = jsonObject1Main.getString("temp_max");
+                            Double maxTempD = Double.valueOf(maxTemp);
+                            String MaxTemp = String.valueOf(maxTempD.intValue());
+                            txtMaxTempMain.setText("Max: " + MaxTemp + "°C");
 
                             // lấy và setText Humidity
                             String humidity = jsonObject1Main.getString("humidity");
@@ -153,8 +149,22 @@ public class WeatherApp extends AppCompatActivity {
 
                             // lấy và setText Country
                             JSONObject jsonObjectSys = jsonObject.getJSONObject("sys");
-                            String country = jsonObjectSys.getString("country");
-                            txtCountry.setText("Quốc Gia: "+country);
+
+                            // lấy và đổ dữ liệu cho text view sunrise
+                            String sunrise = jsonObjectSys.getString("sunrise");
+                            long lSunrise = Long.valueOf(sunrise);
+                            Date dateSunrise = new Date(lSunrise*1000L);
+                            SimpleDateFormat simpleDateFormatSunrise = new SimpleDateFormat("hh:mm a");
+                            String Sunrise = simpleDateFormatSunrise.format(dateSunrise);
+                            txtSunrise.setText(Sunrise);
+
+                            // lấy và đổ dữ liệu cho text view sunset
+                            String sunset = jsonObjectSys.getString("sunset");
+                            long lSunset = Long.valueOf(sunrise);
+                            Date dateSunset = new Date(lSunset*1000L);
+                            SimpleDateFormat simpleDateFormatSunset = new SimpleDateFormat("hh:mm a");
+                            String Sunset = simpleDateFormatSunset.format(dateSunset);
+                            txtSunrise.setText(Sunset);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -171,68 +181,68 @@ public class WeatherApp extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
-    public void GetIconImage(String icon){
+    public static void GetIconImage(String icon, ImageView imageView){
         switch (icon){
             case "01d":
-                imgIcon.setImageResource(R.drawable.d01);
+                imageView.setImageResource(R.drawable.d01);
                 break;
             case "01n":
-                imgIcon.setImageResource(R.drawable.n01);
+                imageView.setImageResource(R.drawable.n01);
                 break;
             case "02d":
-                imgIcon.setImageResource(R.drawable.d02);
+                imageView.setImageResource(R.drawable.d02);
                 break;
             case "02n":
-                imgIcon.setImageResource(R.drawable.n02);
+                imageView.setImageResource(R.drawable.n02);
                 break;
             case "03d":
-                imgIcon.setImageResource(R.drawable.d03);
+                imageView.setImageResource(R.drawable.d03);
                 break;
             case "03n":
-                imgIcon.setImageResource(R.drawable.n03);
+                imageView.setImageResource(R.drawable.n03);
                 break;
             case "04d":
-                imgIcon.setImageResource(R.drawable.d04);
+                imageView.setImageResource(R.drawable.d04);
                 break;
             case "04n":
-                imgIcon.setImageResource(R.drawable.n04);
+                imageView.setImageResource(R.drawable.n04);
                 break;
             case "09d":
-                imgIcon.setImageResource(R.drawable.d09);
+                imageView.setImageResource(R.drawable.d09);
                 break;
             case "09n":
-                imgIcon.setImageResource(R.drawable.n09);
+                imageView.setImageResource(R.drawable.n09);
                 break;
             case "10d":
-                imgIcon.setImageResource(R.drawable.d10);
+                imageView.setImageResource(R.drawable.d10);
                 break;
             case "10n":
-                imgIcon.setImageResource(R.drawable.n10);
+                imageView.setImageResource(R.drawable.n10);
                 break;
             case "11d":
-                imgIcon.setImageResource(R.drawable.d11);
+                imageView.setImageResource(R.drawable.d11);
                 break;
             case "11n":
-                imgIcon.setImageResource(R.drawable.n11);
+                imageView.setImageResource(R.drawable.n11);
                 break;
             case "13d":
-                imgIcon.setImageResource(R.drawable.d13);
+                imageView.setImageResource(R.drawable.d13);
                 break;
             case "13n":
-                imgIcon.setImageResource(R.drawable.n13);
+                imageView.setImageResource(R.drawable.n13);
                 break;
             case "50d":
-                imgIcon.setImageResource(R.drawable.d50);
+                imageView.setImageResource(R.drawable.d50);
                 break;
             case "50n":
-                imgIcon.setImageResource(R.drawable.n50);
+                imageView.setImageResource(R.drawable.n50);
                 break;
         }
     }
     private void Anhxa() {
         edtSearch           = findViewById(R.id.editTextSearch);
         btnSearch           = findViewById(R.id.buttonSearch);
-        btnChangeActivity   = findViewById(R.id.buttonChangeActivity);
+        linearChangeActivity   = findViewById(R.id.linearChangeActivity);
         txtCity             = findViewById(R.id.textViewCity);
         txtCloud            = findViewById(R.id.textViewCloud);
         txtDay              = findViewById(R.id.textViewDay);
@@ -240,7 +250,10 @@ public class WeatherApp extends AppCompatActivity {
         txtStatus           = findViewById(R.id.textViewStatusMain);
         txtWind             = findViewById(R.id.textViewWind);
         txtTemp             = findViewById(R.id.textViewTemp);
-        txtCountry          = findViewById(R.id.textViewCountry);
+        txtMinTempMain      = findViewById(R.id.textViewMinTempMain);
+        txtMaxTempMain      = findViewById(R.id.textViewMaxTempMain);
         imgIcon             = findViewById(R.id.imageViewIcon);
+        txtSunrise          = findViewById(R.id.textViewSunrise);
+        txtSunset           = findViewById(R.id.textViewSunset);
     }
 }
