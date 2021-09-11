@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_custom"
-    tools:context=".TinTuc">
+    tools:context=".ThoiSu">
 
     <ListView
-        android:id="@+id/listViewTinTuc"
+        android:id="@+id/listViewThoiSu"
         android:layout_width="359dp"
         android:layout_height="477dp"
         android:layout_marginTop="88dp"
@@ -31,22 +31,23 @@
             android:id="@+id/textView2"
             android:layout_width="201dp"
             android:layout_height="70dp"
-            android:text="Tin Thế Giới"
+            android:text="Tin Thời Sự"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:id="@+id/ImageViewbackNewsThoiSu"
             android:layout_gravity="center"
-            android:id="@+id/ImageViewbackNews"
-            android:layout_width="78dp"
-            android:layout_height="49dp"
+            android:layout_width="69dp"
+            android:layout_height="43dp"
             android:layout_marginStart="70dp"
+            android:layout_marginRight="10dp"
             android:src="@drawable/next_icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView2"
             app:layout_constraintTop_toTopOf="parent" />
 
-    </LinearLayout>
 
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

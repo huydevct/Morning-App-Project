@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class TinTuc extends AppCompatActivity {
+public class ThoiSu extends AppCompatActivity {
     ListView lvTinTuc;
     ImageView imgBack;
     TinTucAdapter adapter;
@@ -33,42 +33,40 @@ public class TinTuc extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tin_tuc);
-
-        lvTinTuc = findViewById(R.id.listViewTinTuc);
-        imgBack  = findViewById(R.id.ImageViewbackNews);
+        setContentView(R.layout.activity_thoi_su);
+        lvTinTuc = findViewById(R.id.listViewThoiSu);
+        imgBack  = findViewById(R.id.ImageViewbackNewsThoiSu);
         docBaoArrayList = new ArrayList<DocBao>();
 
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                new ReadData().execute("https://vnexpress.net/rss/the-gioi.rss");
+                new ThoiSu.ReadData().execute("https://vnexpress.net/rss/thoi-su.rss");
             }
         });
 
         imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(TinTuc.this, TinTucTongHop.class));
+                startActivity(new Intent(ThoiSu.this, TinTucTongHop.class));
             }
         });
 
         lvTinTuc.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(TinTuc.this, DetailTinTuc.class);
+                Intent intent = new Intent(ThoiSu.this, DetailTinTuc.class);
                 intent.putExtra("linktintuc", docBaoArrayList.get(i).getLink());
                 startActivity(intent);
             }
         });
     }
 
-
-    class ReadData extends AsyncTask<String, Integer, String>{
+    class ReadData extends AsyncTask<String, Integer, String> {
 
         @Override
         protected String doInBackground(String... strings) {
-            return docNoiDung_Tu_URL(strings[0]);
+            return TinTuc.docNoiDung_Tu_URL(strings[0]);
         }
 
         @Override
@@ -95,37 +93,10 @@ public class TinTuc extends AppCompatActivity {
                 link = parser.getValue(element, "link");
                 docBaoArrayList.add(new DocBao(title, link, image));
             }
-            adapter = new TinTucAdapter(TinTuc.this, android.R.layout.simple_list_item_1, docBaoArrayList);
+            adapter = new TinTucAdapter(ThoiSu.this, android.R.layout.simple_list_item_1, docBaoArrayList);
             lvTinTuc.setAdapter(adapter);
 
             super.onPostExecute(s);
         }
-    }
-
-
-    public static String docNoiDung_Tu_URL(String theUrl){
-        StringBuilder content = new StringBuilder();
-        try    {
-            // create a url object
-            URL url = new URL(theUrl);
-
-            // create a urlconnection object
-            URLConnection urlConnection = url.openConnection();
-
-            // wrap the urlconnection in a bufferedreader
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-
-            String line;
-
-            // read from the urlconnection via the bufferedreader
-            while ((line = bufferedReader.readLine()) != null){
-                content.append(line + "\n");
-            }
-            bufferedReader.close();
-        }
-        catch(Exception e)    {
-            e.printStackTrace();
-        }
-        return content.toString();
     }
 }
