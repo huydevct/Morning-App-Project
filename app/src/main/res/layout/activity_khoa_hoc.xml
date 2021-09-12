@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_custom"
+    android:background="#8EC2EC"
     tools:context=".KhoaHoc">
 
     <ListView
@@ -14,7 +14,7 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="88dp"
         android:layout_marginRight="5dp"
-        android:background="@drawable/textview_custom"
+        android:background="@drawable/list_view_custom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"

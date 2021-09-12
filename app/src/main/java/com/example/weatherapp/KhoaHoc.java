@@ -34,6 +34,7 @@ public class KhoaHoc extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_khoa_hoc);
+        overridePendingTransition(R.anim.side_in_right, R.anim.side_out_left);
 
         lvTinTuc = findViewById(R.id.listViewKhoaHoc);
         imgBack  = findViewById(R.id.ImageViewbackNewsKhoaHoc);

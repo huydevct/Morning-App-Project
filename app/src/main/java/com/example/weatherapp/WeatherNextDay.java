@@ -41,6 +41,7 @@ public class WeatherNextDay extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather_next_day);
+        overridePendingTransition(R.anim.side_in_right, R.anim.side_out_left);
 
         Anhxa();
 

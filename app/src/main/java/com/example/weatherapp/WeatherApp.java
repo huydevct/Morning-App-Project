@@ -39,6 +39,7 @@ public class WeatherApp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather_app);
+        overridePendingTransition(R.anim.side_in_right, R.anim.side_out_left);
 
         Anhxa();
         GetCurrentWeatherData("Hanoi");
@@ -117,10 +118,6 @@ public class WeatherApp extends AppCompatActivity {
                             //Icon
                             String icon = jsonObjectWeather.getString("icon");
                             GetIconImage(icon, imgIcon);
-//                            String url = "http://openweathermap.org/img/wn/"+icon+"@2x.png";
-//
-//                            Glide.with(WeatherApp.this).load(url)
-//                                    .into(imgIcon);//error not yet fix
 
                             JSONObject jsonObject1Main = jsonObject.getJSONObject("main");
                             // lấy và setText Temparature
@@ -168,7 +165,7 @@ public class WeatherApp extends AppCompatActivity {
 
                             // lấy và đổ dữ liệu cho text view sunset
                             String sunset = jsonObjectSys.getString("sunset");
-                            long lSunset = Long.valueOf(sunrise);
+                            long lSunset = Long.valueOf(sunset);
                             Date dateSunset = new Date(lSunset*1000L);
                             SimpleDateFormat simpleDateFormatSunset = new SimpleDateFormat("hh:mm a");
                             String Sunset = simpleDateFormatSunset.format(dateSunset);

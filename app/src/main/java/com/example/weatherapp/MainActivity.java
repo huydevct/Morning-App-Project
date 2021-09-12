@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        overridePendingTransition(R.anim.side_in_right, R.anim.side_out_left);
 
         Anhxa();
 
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
         imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

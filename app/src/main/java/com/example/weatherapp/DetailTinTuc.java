@@ -19,6 +19,7 @@ public class DetailTinTuc extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_tin_tuc);
+        overridePendingTransition(R.anim.side_in_right, R.anim.side_out_left);
 
         imgBack = findViewById(R.id.imageViewBackDetail);
         webView = findViewById(R.id.webViewTinTuc);
@@ -33,6 +34,7 @@ public class DetailTinTuc extends AppCompatActivity {
         webView.setWebViewClient(new WebViewClient());
 
         txtTitle.setText(title);
+
         imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

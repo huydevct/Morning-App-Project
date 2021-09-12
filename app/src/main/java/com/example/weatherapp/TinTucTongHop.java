@@ -16,6 +16,7 @@ public class TinTucTongHop extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tin_tuc_tong_hop);
+        overridePendingTransition(R.anim.side_in_right, R.anim.side_out_left);
 
         Anhxa();
 

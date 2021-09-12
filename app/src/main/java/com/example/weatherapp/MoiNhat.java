@@ -34,6 +34,8 @@ public class MoiNhat extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_moi_nhat);
+        overridePendingTransition(R.anim.side_in_right, R.anim.side_out_left);
+
         lvTinTuc = findViewById(R.id.listViewMoiNhat);
         imgBack  = findViewById(R.id.ImageViewbackNewsMoiNhat);
         docBaoArrayList = new ArrayList<DocBao>();

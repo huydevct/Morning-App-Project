@@ -34,6 +34,7 @@ public class TheThao extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_the_thao);
+        overridePendingTransition(R.anim.side_in_right, R.anim.side_out_left);
 
         lvTinTuc = findViewById(R.id.listViewThoiSu);
         imgBack  = findViewById(R.id.ImageViewbackNewsThoiSu);

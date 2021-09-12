@@ -34,6 +34,7 @@ public class TinTuc extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tin_tuc);
+        overridePendingTransition(R.anim.side_in_right, R.anim.side_out_left);
 
         lvTinTuc = findViewById(R.id.listViewTinTuc);
         imgBack  = findViewById(R.id.ImageViewbackNews);

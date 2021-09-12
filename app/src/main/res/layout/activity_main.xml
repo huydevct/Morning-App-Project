@@ -5,12 +5,12 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_custom"
+        android:background="#D180DF"
         tools:context=".MainActivity">
 
         <LinearLayout
             android:id="@+id/linearLayout"
-            android:background="@drawable/linear_custom"
+            android:background="@drawable/linear_main_custom"
             android:layout_width="match_parent"
             android:layout_height="65dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -20,10 +20,11 @@
                 <TextView
                     android:layout_marginLeft="15dp"
                     android:id="@+id/textView"
+                    android:textColor="#2C0505"
                     android:layout_width="243dp"
                     android:layout_height="42dp"
                     android:layout_marginTop="4dp"
-                    android:text="App Thông Tin"
+                    android:text="News Weather "
                     android:textSize="30sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -31,7 +32,7 @@
                 <ImageButton
                     android:id="@+id/buttonTienIch"
                     android:layout_width="60dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="42dp"
                     android:background="@null"
                     android:layout_height="60dp"
                     android:scaleType="fitXY"
@@ -39,59 +40,68 @@
         </LinearLayout>
 
 
-        <ImageView
-            android:id="@+id/imageViewBack"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:layout_marginTop="5dp"
-            android:background="@null"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            app:srcCompat="@drawable/back_icon" />
-
-        <ImageView
-            android:id="@+id/imageViewNext"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_margin="3dp"
-            android:layout_marginTop="1dp"
-            android:background="@null"
-            app:layout_constraintStart_toEndOf="@+id/imageViewBack"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            app:srcCompat="@drawable/next_icon" />
-
-        <ImageView
-            android:id="@+id/imageViewReload"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_margin="4dp"
-            android:background="@null"
-            app:layout_constraintStart_toEndOf="@+id/imageViewNext"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            app:srcCompat="@drawable/reload_icon" />
-
-        <EditText
-            android:id="@+id/editTextTimKiem"
-            android:layout_width="200dp"
-            android:layout_height="40dp"
-            android:layout_margin="3dp"
-            android:ems="10"
-            android:hint="Tìm Kiếm..."
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toStartOf="@+id/buttonSearch"
-            app:layout_constraintStart_toEndOf="@+id/imageViewReload"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-        <ImageButton
-            android:id="@+id/buttonSearch"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@null"
-            android:layout_marginRight="10dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/search_icon"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+
+                <ImageView
+                    android:id="@+id/imageViewBack"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@null"
+                    app:srcCompat="@drawable/back_icon"
+                    tools:layout_editor_absoluteY="70dp" />
+
+                <ImageView
+                    android:id="@+id/imageViewNext"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@null"
+                    app:srcCompat="@drawable/next_icon"
+                    tools:layout_editor_absoluteX="31dp"
+                    tools:layout_editor_absoluteY="68dp" />
+
+                <ImageView
+                    android:id="@+id/imageViewReload"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@null"
+                    app:srcCompat="@drawable/reload_icon"
+                    tools:layout_editor_absoluteX="65dp"
+                    tools:layout_editor_absoluteY="69dp" />
+
+                <EditText
+                    android:id="@+id/editTextTimKiem"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:textColor="#2C0505"
+                    android:hint="Tìm Kiếm..."
+                    android:inputType="textPersonName"
+                    tools:layout_editor_absoluteX="98dp"
+                    tools:layout_editor_absoluteY="68dp" />
+
+                <ImageButton
+                    android:id="@+id/buttonSearch"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="16dp"
+                    android:background="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/search_icon"
+                    tools:layout_editor_absoluteX="305dp"
+                    tools:layout_editor_absoluteY="65dp" />
+        </LinearLayout>
 
         <WebView
             android:id="@+id/webViewSearch"

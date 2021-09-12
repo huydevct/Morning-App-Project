@@ -34,6 +34,7 @@ public class KinhDoanh extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kinh_doanh);
+        overridePendingTransition(R.anim.side_in_right, R.anim.side_out_left);
 
         lvTinTuc = findViewById(R.id.listViewKinhDoanh);
         imgBack  = findViewById(R.id.ImageViewbackNewsKinhDoanh);

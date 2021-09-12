@@ -34,6 +34,7 @@ public class GiaiTri extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_giai_tri);
+        overridePendingTransition(R.anim.side_in_right, R.anim.side_out_left);
 
         lvTinTuc = findViewById(R.id.listViewGiaiTri);
         imgBack  = findViewById(R.id.ImageViewbackNewsGiaiTri);

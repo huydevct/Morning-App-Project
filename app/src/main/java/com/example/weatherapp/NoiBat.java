@@ -35,6 +35,7 @@ public class NoiBat extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_noi_bat);
+        overridePendingTransition(R.anim.side_in_right, R.anim.side_out_left);
 
         lvTinTuc = findViewById(R.id.listViewNoiBat);
         imgBack  = findViewById(R.id.ImageViewbackNewsNoiBat);
