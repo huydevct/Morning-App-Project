@@ -39,6 +39,48 @@ public class TinTucTongHop extends AppCompatActivity {
                 startActivity(new Intent(TinTucTongHop.this, ThoiSu.class));
             }
         });
+
+        txtMoiNhat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(TinTucTongHop.this, MoiNhat.class));
+            }
+        });
+
+        txtNoiBat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(TinTucTongHop.this, NoiBat.class));
+            }
+        });
+
+        txtTheThao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(TinTucTongHop.this, TheThao.class));
+            }
+        });
+
+        txtGiaiTri.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(TinTucTongHop.this, GiaiTri.class));
+            }
+        });
+
+        txtKhoaHoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(TinTucTongHop.this, KhoaHoc.class));
+            }
+        });
+
+        txtKinhDoanh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(TinTucTongHop.this, KinhDoanh.class));
+            }
+        });
     }
 
     private void Anhxa() {

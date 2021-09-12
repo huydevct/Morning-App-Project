@@ -13,12 +13,13 @@ import android.webkit.WebViewClient;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnTienIch, btnSearch;
+    ImageButton btnTienIch, btnSearch;
     EditText edtSearch;
     WebView webViewSearch;
     ImageView imgNext, imgBack, imgReload;

@@ -24,7 +24,8 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ThoiSu extends AppCompatActivity {
+
+public class NoiBat extends AppCompatActivity {
     ListView lvTinTuc;
     ImageView imgBack;
     TinTucAdapter adapter;
@@ -33,30 +34,30 @@ public class ThoiSu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_thoi_su);
+        setContentView(R.layout.activity_noi_bat);
 
-        lvTinTuc = findViewById(R.id.listViewThoiSu);
-        imgBack  = findViewById(R.id.ImageViewbackNewsThoiSu);
+        lvTinTuc = findViewById(R.id.listViewNoiBat);
+        imgBack  = findViewById(R.id.ImageViewbackNewsNoiBat);
         docBaoArrayList = new ArrayList<DocBao>();
 
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                new ThoiSu.ReadData().execute("https://vnexpress.net/rss/thoi-su.rss");
+                new NoiBat.ReadData().execute("https://vnexpress.net/rss/tin-noi-bat.rss");
             }
         });
 
         imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ThoiSu.this, TinTucTongHop.class));
+                startActivity(new Intent(NoiBat.this, TinTucTongHop.class));
             }
         });
 
         lvTinTuc.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(ThoiSu.this, DetailTinTuc.class);
+                Intent intent = new Intent(NoiBat.this, DetailTinTuc.class);
                 intent.putExtra("linktintuc", docBaoArrayList.get(i).getLink());
                 startActivity(intent);
             }
@@ -94,7 +95,7 @@ public class ThoiSu extends AppCompatActivity {
                 link = parser.getValue(element, "link");
                 docBaoArrayList.add(new DocBao(title, link, image));
             }
-            adapter = new TinTucAdapter(ThoiSu.this, android.R.layout.simple_list_item_1, docBaoArrayList);
+            adapter = new TinTucAdapter(NoiBat.this, android.R.layout.simple_list_item_1, docBaoArrayList);
             lvTinTuc.setAdapter(adapter);
 
             super.onPostExecute(s);

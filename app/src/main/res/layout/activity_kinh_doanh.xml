@@ -5,14 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_custom"
-    tools:context=".TinTuc">
-
+    tools:context=".KinhDoanh">
     <ListView
-        android:id="@+id/listViewTinTuc"
+        android:id="@+id/listViewKinhDoanh"
         android:layout_width="348dp"
-        android:layout_height="473dp"
-        android:layout_marginTop="92dp"
-        android:layout_marginLeft="10dp"
+        android:layout_height="472dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="88dp"
         android:layout_marginRight="5dp"
         android:background="@drawable/textview_custom"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,30 +22,32 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/linear_custom"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginRight="5dp"
+        android:background="@drawable/linear_custom"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="10dp"
             android:id="@+id/textView2"
             android:layout_width="201dp"
             android:layout_height="70dp"
-            android:text="Tin Thế Giới"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="10dp"
+            android:text="Tin Thời Sự"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:id="@+id/ImageViewbackNewsKinhDoanh"
+            android:layout_width="69dp"
+            android:layout_height="43dp"
             android:layout_gravity="center"
-            android:id="@+id/ImageViewbackNews"
-            android:layout_width="78dp"
-            android:layout_height="49dp"
             android:layout_marginStart="70dp"
+            android:layout_marginRight="10dp"
             android:src="@drawable/next_icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView2"

@@ -13,6 +13,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WeatherApp">
         <activity
+            android:name=".KinhDoanh"
+            android:exported="true" />
+        <activity
+            android:name=".KhoaHoc"
+            android:exported="true" />
+        <activity
+            android:name=".GiaiTri"
+            android:exported="true" />
+        <activity
+            android:name=".TheThao"
+            android:exported="true" />
+        <activity
+            android:name=".NoiBat"
+            android:exported="true" />
+        <activity
+            android:name=".MoiNhat"
+            android:exported="true" />
+        <activity
             android:name=".ThoiSu"
             android:exported="true" />
         <activity

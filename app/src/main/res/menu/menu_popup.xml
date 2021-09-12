@@ -3,6 +3,6 @@
     <item android:title="Weather"
 
         android:id="@+id/menuWeather"/>
-    <item android:title="Tin Tức"
+    <item android:title="News"
         android:id="@+id/menuTinTuc"/>
 </menu>

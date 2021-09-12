@@ -9,6 +9,7 @@
     tools:context=".WeatherNextDay">
 
     <LinearLayout
+        android:background="@drawable/linear_custom"
         android:layout_width="match_parent"
         android:layout_height="57dp"
         android:orientation="horizontal">
@@ -29,7 +30,6 @@
             android:layout_marginLeft="200dp"
             android:text="Thành Phố"
             android:layout_gravity="center"
-            android:textColor="#fff"
             android:textSize="30sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -37,6 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="20dp"/>
     <ListView
+        android:background="@drawable/textview_custom"
         android:padding="5dp"
         android:id="@+id/listViewStatus"
         android:layout_width="wrap_content"
