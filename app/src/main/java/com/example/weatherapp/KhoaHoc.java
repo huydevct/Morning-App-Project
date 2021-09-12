@@ -58,6 +58,7 @@ public class KhoaHoc extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(KhoaHoc.this, DetailTinTuc.class);
                 intent.putExtra("linktintuc", docBaoArrayList.get(i).getLink());
+                intent.putExtra("title", docBaoArrayList.get(i).getTitle());
                 startActivity(intent);
             }
         });

@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         Anhxa();
 
+        edtSearch.setShowSoftInputOnFocus(false);
         webViewSearch.setWebViewClient(new WebViewClient());
         String urlMain = edtSearch.getText().toString().trim();
         if(urlMain.equals("")){
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
             webViewSearch.loadUrl("https://"+urlMain);
             edtSearch.setText(webViewSearch.getUrl());
         }
+
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,9 +52,13 @@ public class MainActivity extends AppCompatActivity {
                 if(url.equals("https://google.com/")){
                     webViewSearch.loadUrl(url);
                     edtSearch.setText(webViewSearch.getUrl());
+                }else if(url.contains("https://")){
+                    URL = url;
+                    webViewSearch.loadUrl(url);
+                    edtSearch.setText(webViewSearch.getUrl());
                 }else{
                     URL = url;
-                    webViewSearch.loadUrl("https://"+url);
+                    webViewSearch.loadUrl("https://" + url);
                     edtSearch.setText(webViewSearch.getUrl());
                 }
 

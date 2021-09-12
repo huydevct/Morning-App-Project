@@ -57,6 +57,7 @@ public class MoiNhat extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(MoiNhat.this, DetailTinTuc.class);
                 intent.putExtra("linktintuc", docBaoArrayList.get(i).getLink());
+                intent.putExtra("title", docBaoArrayList.get(i).getTitle());
                 startActivity(intent);
             }
         });
