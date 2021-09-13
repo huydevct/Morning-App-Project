@@ -132,8 +132,10 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.menuTinTuc:
                         startActivity(new Intent(MainActivity.this, TinTucTongHop.class));
                         break;
+                    case R.id.menuCovid19:
+                        startActivity(new Intent(MainActivity.this, Covid19Activity.class));
+                        break;
                 }
-
                 return false;
             }
         });

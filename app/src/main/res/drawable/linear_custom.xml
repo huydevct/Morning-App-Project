@@ -7,6 +7,6 @@
     <corners android:bottomLeftRadius="25dp"
         android:bottomRightRadius="25dp"/>
     <stroke android:color="#000"
-        android:width="3dp"/>
+        android:width="2dp"/>
 
 </shape>
