@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/drawable/bg_custom.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/btn_bg.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/btn_custom.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/btn_start_custom.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/call_button.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/constran_custom.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/dong_tin_tuc_custom.xml" value="0.371875" />
@@ -34,6 +35,7 @@
         <entry key="app/src/main/res/drawable/statistic_button.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/textview_custom.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/todo_custom.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/welcome_custom.xml" value="0.371875" />
         <entry key="app/src/main/res/layout/activity_call.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_cdchanoi.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_covid19.xml" value="0.33" />
@@ -54,6 +56,7 @@
         <entry key="app/src/main/res/layout/activity_to_do.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_weather_app.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_weather_next_day.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/activity_wel_come.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/content_main_activity_navigation.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/dong_list_view.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/dong_tin_tuc.xml" value="0.35572916666666665" />
