@@ -6,4 +6,72 @@
     android:layout_height="match_parent"
     tools:context=".ToDoActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/todo_custom"
+        android:layout_marginBottom="2dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/LinearTopToDo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewBackToDo"
+            android:layout_width="47dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/back" />
+        <TextView
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_marginLeft="180dp"
+            android:text="To Do List"
+            android:textSize="24sp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearBottomToDo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <EditText
+            android:id="@+id/editTextToDo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="addItem"
+            android:text="Add" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LinearTopToDo"
+        android:background="@drawable/list_todo_custom"
+        android:layout_width="0dp"
+        android:layout_height="457dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearBottomToDo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ListView
+            android:id="@+id/listViewToDo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="-1dp"
+            tools:layout_editor_absoluteY="146dp" />
+
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

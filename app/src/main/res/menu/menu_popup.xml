@@ -6,4 +6,6 @@
         android:id="@+id/menuTinTuc"/>
     <item android:title="Covid 19 Tracker"
         android:id="@+id/menuCovid19"/>
+    <item android:title="To Do List"
+        android:id="@+id/menuToDo"/>
 </menu>

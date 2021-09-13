@@ -135,6 +135,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.menuCovid19:
                         startActivity(new Intent(MainActivity.this, Covid19Activity.class));
                         break;
+                    case R.id.menuToDo:
+                        startActivity(new Intent(MainActivity.this, ToDoActivity.class));
+                        break;
                 }
                 return false;
             }
