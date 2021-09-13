@@ -23,6 +23,7 @@ public class SMS extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sms);
+        overridePendingTransition(R.anim.side_in_right, R.anim.side_out_left);
 
         edtMessage = findViewById(R.id.editTextMessage);
         edtNumber  = findViewById(R.id.editTextNumber);

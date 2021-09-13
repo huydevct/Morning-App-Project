@@ -33,6 +33,7 @@
         <entry key="app/src/main/res/drawable/statistic_button.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/textview_custom.xml" value="0.371875" />
         <entry key="app/src/main/res/layout/activity_call.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/activity_cdchanoi.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_covid19.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_detail_tin_tuc.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_giai_tri.xml" value="0.35572916666666665" />
@@ -41,6 +42,8 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.340625" />
         <entry key="app/src/main/res/layout/activity_moi_nhat.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_noi_bat.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/activity_qr.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/activity_qrdetail.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_sms.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_the_thao.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_thoi_su.xml" value="0.35572916666666665" />

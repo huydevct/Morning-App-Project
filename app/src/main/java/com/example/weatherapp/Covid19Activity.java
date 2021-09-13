@@ -24,7 +24,10 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DecimalFormat;
+
 public class Covid19Activity extends AppCompatActivity {
+    private final String urlCDC = "https://covidmaps.hanoi.gov.vn/";
     private final String urlVN = "https://disease.sh/v3/covid-19/countries/vn";
     private final String urlGlobal = "https://disease.sh/v3/covid-19/all";
     private final String urlVacVN = "https://disease.sh/v3/covid-19/vaccine/coverage/countries/vn?lastdays=1";
@@ -32,13 +35,14 @@ public class Covid19Activity extends AppCompatActivity {
     TextView txtConfirm, txtRecover, txtDeath, txtVaccine, txtQR;
     Button btnCall, btnSMS;
     LinearLayout linearMenu;
-    ImageView imgFlag, imgDown, imgBack;
+    ImageView imgFlag, imgDown, imgBack, imgCDC;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_covid19);
+        overridePendingTransition(R.anim.side_in_right, R.anim.side_out_left);
 
         Anhxa();
 
@@ -76,7 +80,16 @@ public class Covid19Activity extends AppCompatActivity {
         txtQR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startActivity(new Intent(Covid19Activity.this, QR.class));
+            }
+        });
 
+        imgCDC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Covid19Activity.this, CDCHanoi.class);
+                intent.putExtra("linkCDC", urlCDC);
+                startActivity(intent);
             }
         });
     }
@@ -105,6 +118,12 @@ public class Covid19Activity extends AppCompatActivity {
         popupMenu.show();
     }
 
+    private String formatNum(String num){
+        long numl = Long.parseLong(num);
+        DecimalFormat decimalFormat = new DecimalFormat("###,###");
+        return decimalFormat.format(numl);
+    }
+
     private void fetchData(String url) {
         StringRequest request = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
@@ -113,9 +132,9 @@ public class Covid19Activity extends AppCompatActivity {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
 
-                            txtConfirm.setText(jsonObject.getString("cases"));
-                            txtRecover.setText(jsonObject.getString("recovered"));
-                            txtDeath.setText(jsonObject.getString("deaths"));
+                            txtConfirm.setText(formatNum(jsonObject.getString("cases")));
+                            txtRecover.setText(formatNum(jsonObject.getString("recovered")));
+                            txtDeath.setText(formatNum(jsonObject.getString("deaths")));
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -144,8 +163,9 @@ public class Covid19Activity extends AppCompatActivity {
 
                             JSONObject jsonObjectTimeline = jsonObject.getJSONObject("timeline");
                             String vac = jsonObjectTimeline.getString("9/12/21");
+                            String vacFormat = formatNum(vac);
 
-                            txtVaccine.setText(vac);
+                            txtVaccine.setText(vacFormat);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -162,6 +182,7 @@ public class Covid19Activity extends AppCompatActivity {
     }
 
     private void Anhxa() {
+        imgCDC     = findViewById(R.id.imageViewCDC);
         txtQR      = findViewById(R.id.textViewQR);
         imgBack    = findViewById(R.id.imageViewBackToMain);
         txtConfirm = findViewById(R.id.textViewConfirmCase);

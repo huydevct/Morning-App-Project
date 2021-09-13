@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#94D0FF"
+    tools:context=".CDCHanoi">
+
+    <WebView
+        android:id="@+id/webViewCDCHanoi"
+        android:layout_width="0dp"
+        android:layout_height="519dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewBackCDCHanoi"
+        android:layout_width="52dp"
+        android:layout_height="46dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
+
+    <ImageView
+        android:id="@+id/imageViewPrevCDC"
+        android:layout_width="47dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="44dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewNextCDC"
+        app:layout_constraintStart_toEndOf="@+id/imageViewBackCDCHanoi"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/back_icon" />
+
+    <ImageView
+        android:id="@+id/imageViewNextCDC"
+        android:layout_width="49dp"
+        android:layout_height="37dp"
+        app:layout_constraintStart_toEndOf="@+id/imageViewPrevCDC"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/next_icon" />
+
+    <ImageView
+        android:id="@+id/imageViewReloadCDC"
+        android:layout_width="47dp"
+        android:layout_height="46dp"
+        app:layout_constraintStart_toEndOf="@+id/imageViewNextCDC"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/reload_icon" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,21 +10,20 @@
 
     <WebView
         android:id="@+id/webViewTinTuc"
-        android:layout_width="360dp"
-        android:layout_height="520dp"
+        android:layout_width="359dp"
+        android:layout_height="478dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:background="@drawable/linear_custom"
-        app:layout_constraintBottom_toTopOf="@+id/webViewTinTuc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -50,5 +49,33 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageViewPrevTT"
+        android:layout_width="48dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        app:srcCompat="@drawable/back_icon" />
+
+    <ImageView
+        android:id="@+id/imageViewNextTT"
+        android:layout_width="46dp"
+        android:layout_height="49dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewPrevTT"
+        app:layout_constraintStart_toEndOf="@+id/imageViewPrevTT"
+        app:layout_constraintTop_toTopOf="@+id/imageViewPrevTT"
+        app:srcCompat="@drawable/next_icon" />
+
+    <ImageView
+        android:id="@+id/imageViewReloadTT"
+        android:layout_width="54dp"
+        android:layout_height="44dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewNextTT"
+        app:layout_constraintStart_toEndOf="@+id/imageViewNextTT"
+        app:layout_constraintTop_toTopOf="@+id/imageViewNextTT"
+        app:srcCompat="@drawable/reload_icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

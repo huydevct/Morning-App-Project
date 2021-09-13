@@ -61,6 +61,7 @@ public class WeatherApp extends AppCompatActivity {
                 City = city;
                 GetCurrentWeatherData(City);
             }
+            edtSearch.setText("");
         });
 
         linearChangeActivity.setOnClickListener(view -> {
