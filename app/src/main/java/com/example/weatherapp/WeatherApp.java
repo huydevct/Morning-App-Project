@@ -33,6 +33,7 @@ public class WeatherApp extends AppCompatActivity {
     TextView txtCity, txtTemp, txtStatus, txtCloud, txtDay, txtWind, txtHumidity, txtMinTempMain, txtMaxTempMain, txtSunrise, txtSunset;
     ImageView imgIcon, imagBack;
     String City = "";
+    String cityChange = "";
 
 
     @Override
@@ -61,13 +62,14 @@ public class WeatherApp extends AppCompatActivity {
                 City = city;
                 GetCurrentWeatherData(City);
             }
+            cityChange = city;
             edtSearch.setText("");
         });
 
         linearChangeActivity.setOnClickListener(view -> {
-            String city = edtSearch.getText().toString();
+//            String city = edtSearch.getText().toString();
             Intent intent = new Intent(WeatherApp.this, WeatherNextDay.class);
-            intent.putExtra("city", city);
+            intent.putExtra("city", cityChange);
             startActivity(intent);
         });
     }

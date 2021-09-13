@@ -5,7 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#D180DF"
+        android:background="#A2FFF6"
         tools:context=".MainActivity">
 
         <LinearLayout
@@ -20,7 +20,7 @@
                 <TextView
                     android:layout_marginLeft="15dp"
                     android:id="@+id/textView"
-                    android:textColor="#2C0505"
+                    android:textColor="#FFFFFF"
                     android:layout_width="243dp"
                     android:layout_height="42dp"
                     android:layout_marginTop="4dp"
@@ -32,8 +32,9 @@
                 <ImageButton
                     android:id="@+id/buttonTienIch"
                     android:layout_width="60dp"
+                    android:layout_marginTop="2dp"
                     android:layout_marginLeft="42dp"
-                    android:background="@null"
+                    android:background="#8ACAFB"
                     android:layout_height="60dp"
                     android:scaleType="fitXY"
                     android:src="@drawable/popup" />
