@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#A6F6A9"
     tools:context=".ToDoActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@drawable/todo_custom"
-        android:layout_marginBottom="2dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/LinearTopToDo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -22,47 +22,28 @@
             android:layout_width="47dp"
             android:layout_height="match_parent"
             android:src="@drawable/back" />
-        <TextView
-            android:gravity="center"
-            android:textStyle="bold"
-            android:layout_marginLeft="180dp"
-            android:text="To Do List"
-            android:textSize="24sp"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"/>
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/linearBottomToDo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-        <EditText
-            android:id="@+id/editTextToDo"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1" />
 
-        <Button
+        <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="addItem"
-            android:text="Add" />
+            android:layout_height="match_parent"
+            android:layout_marginLeft="190dp"
+            android:gravity="center"
+            android:text="To Do List"
+            android:textColor="#00FFE7"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/LinearTopToDo"
-        android:background="@drawable/list_todo_custom"
         android:layout_width="0dp"
-        android:layout_height="457dp"
+        android:layout_height="468dp"
+        android:background="@drawable/list_todo_custom"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearBottomToDo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
         <ListView
             android:id="@+id/listViewToDo"
@@ -73,5 +54,13 @@
 
     </LinearLayout>
 
-
+    <ImageView
+        android:id="@+id/imageViewAdd"
+        android:layout_width="73dp"
+        android:layout_height="59dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LinearTopToDo"
+        app:srcCompat="@drawable/add_icon" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,29 +3,35 @@ package com.example.weatherapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 //import android.content.SharedPreferences;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ToDoActivity extends AppCompatActivity {
-    List<String> toDoList;
-    ArrayAdapter<String> adapter;
-    ListView listView;
-    EditText edtToDo;
-    ImageView imagBack;
-//    SharedPreferences sharedPreferences;
-//    SharedPreferences.Editor editor;
-//    private Integer i=0;
+    Database database;
 
+    ArrayList<CongViec> arrayList;
+    CongViecAdapter adapter;
+    ListView listView;
+
+    ImageView imagBack, imgAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,50 +39,138 @@ public class ToDoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_to_do);
 
         imagBack = findViewById(R.id.imageViewBackToDo);
-        toDoList = new ArrayList<>();
-        adapter = new ArrayAdapter<>(this, R.layout.todo_list, toDoList);
-        listView = findViewById(R.id.listViewToDo);
-        edtToDo  = findViewById(R.id.editTextToDo);
+        imgAdd   = findViewById(R.id.imageViewAdd);
 
-//        sharedPreferences = getSharedPreferences("todolist", MODE_PRIVATE);
-//        for (int j=0; j<i; j++){
-//            toDoList.set(j, sharedPreferences.getString("todo" + j, "cant find"));
-//        }
+        imgAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DialogAdd();
+            }
+        });
 
         imagBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onBackPressed();
+                startActivity(new Intent(ToDoActivity.this, MainActivity.class));
             }
         });
 
+        listView = findViewById(R.id.listViewToDo);
+        arrayList = new ArrayList<>();
+        adapter = new CongViecAdapter(this, R.layout.todo_list, arrayList);
         listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                TextView textView = (TextView) view;
-                textView.setPaintFlags(textView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-            }
-        });
-        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                toDoList.remove(toDoList.get(i));
-                adapter.notifyDataSetChanged();
-                return false;
-            }
-        });
+
+        // tao database
+        database = new Database(this, "ghichu.sqlite", null, 1);
+
+        // tao ghi chu
+        database.QueryData("CREATE TABLE IF NOT EXISTS CongViec(Id INTEGER PRIMARY KEY AUTOINCREMENT, TenCV VARCHAR(200))");
+
+        GetDataCongViec();
+
     }
 
-    public void addItem(View view){
-        toDoList.add(edtToDo.getText().toString());
+    public void DeleteTodo(final int id){
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setMessage("Do you want to delete this?");
 
-//        editor = sharedPreferences.edit();
-//        editor.putString("todo"+i, edtToDo.getText().toString().trim());
-//        i++;
-//        editor.commit();
+        dialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                database.QueryData("DELETE FROM CongViec WHERE Id = '"+id+"'");
+                Toast.makeText(ToDoActivity.this, "Deleted!", Toast.LENGTH_SHORT).show();
+                GetDataCongViec();
+            }
+        });
 
+        dialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        dialog.show();
+    }
+
+    private void GetDataCongViec(){
+        Cursor dataCongViec = database.GetData("SELECT * FROM CongViec");
+        arrayList.clear();
+        while (dataCongViec.moveToNext()){
+            String ten = dataCongViec.getString(1);
+            int id = dataCongViec.getInt(0);
+            arrayList.add(new CongViec(id, ten));
+        }
         adapter.notifyDataSetChanged();
-        edtToDo.setText("");
     }
+
+    public void DialogUpdate(String ten, final int id){
+        Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_sua);
+        dialog.setCanceledOnTouchOutside(false);
+
+        EditText edtUpdate = dialog.findViewById(R.id.editTextUpdateTodo);
+        Button btnUpdate = dialog.findViewById(R.id.btnUpdateToDo);
+        Button btnCancel = dialog.findViewById(R.id.btnCancelUpdateTodo);
+
+        edtUpdate.setText(ten);
+
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String tenMoi = edtUpdate.getText().toString();
+                database.QueryData("UPDATE CongViec SET TenCV = '"+tenMoi+"' WHERE Id = '"+id+"'");
+                Toast.makeText(ToDoActivity.this, "Updated!", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+                GetDataCongViec();
+            }
+        });
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
+    private void DialogAdd(){
+        Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_todo);
+        dialog.setCanceledOnTouchOutside(false);
+
+        EditText edtTen = dialog.findViewById(R.id.editTextAddTodo);
+        Button btnAdd = dialog.findViewById(R.id.btnAddToDo);
+        Button btnCancel = dialog.findViewById(R.id.btnCancelTodo);
+
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String tencv = edtTen.getText().toString();
+                if(tencv.equals("")){
+                    Toast.makeText(ToDoActivity.this, "Please Add Something!", Toast.LENGTH_SHORT).show();
+                }else{
+                    database.QueryData("INSERT INTO CongViec VALUES(null, '"+tencv+"')");
+                    Toast.makeText(ToDoActivity.this, "Added!", Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
+                    GetDataCongViec();
+                }
+            }
+        });
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
+
 }

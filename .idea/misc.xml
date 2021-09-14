@@ -25,6 +25,7 @@
         <entry key="app/src/main/res/drawable/ic_testbanner.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/linear_custom.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/linear_main_custom.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/linear_todo_custom.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/list_todo_custom.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/list_view_custom.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/map_bg.xml" value="0.371875" />
@@ -58,6 +59,8 @@
         <entry key="app/src/main/res/layout/activity_weather_next_day.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_wel_come.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/content_main_activity_navigation.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/dialog_sua.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/dialog_todo.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/dong_list_view.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/dong_tin_tuc.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/todo_custom.xml" value="0.35572916666666665" />
@@ -65,6 +68,7 @@
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/menu/menu_covid.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/menu/menu_popup.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/menu/menu_todo_list.xml" value="0.35572916666666665" />
       </map>
     </option>
   </component>

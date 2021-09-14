@@ -38,8 +38,9 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="281dp"
-        android:layout_height="457dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rela_custom"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -78,8 +79,9 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/textview_custom"
                 android:gravity="center"
-                android:textColor="#2C0505"
+                android:layout_marginLeft="60dp"
                 android:text="Thời Sự"
+                android:textColor="#2C0505"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -101,8 +103,8 @@
                 android:layout_marginLeft="18dp"
                 android:background="@drawable/textview_custom"
                 android:gravity="center"
-                android:textColor="#2C0505"
                 android:text="Mới Nhất"
+                android:textColor="#2C0505"
                 android:textSize="20sp" />
 
             <Space
@@ -115,8 +117,9 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/textview_custom"
                 android:gravity="center"
-                android:textColor="#2C0505"
+                android:layout_marginLeft="60dp"
                 android:text="Nổi Bật"
+                android:textColor="#2C0505"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -134,8 +137,8 @@
                 android:layout_marginLeft="18dp"
                 android:background="@drawable/textview_custom"
                 android:gravity="center"
-                android:textColor="#2C0505"
                 android:text="Thể Thao"
+                android:textColor="#2C0505"
                 android:textSize="20sp" />
 
             <Space
@@ -148,8 +151,9 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/textview_custom"
                 android:gravity="center"
-                android:textColor="#2C0505"
+                android:layout_marginLeft="60dp"
                 android:text="Giải Trí"
+                android:textColor="#2C0505"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -172,8 +176,8 @@
                 android:layout_marginLeft="18dp"
                 android:background="@drawable/textview_custom"
                 android:gravity="center"
-                android:textColor="#2C0505"
                 android:text="Khoa Học"
+                android:textColor="#2C0505"
                 android:textSize="20sp" />
 
             <Space
@@ -186,8 +190,9 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/textview_custom"
                 android:gravity="center"
-                android:textColor="#2C0505"
                 android:text="Kinh Doanh"
+                android:layout_marginLeft="60dp"
+                android:textColor="#2C0505"
                 android:textSize="20sp" />
         </LinearLayout>
 
