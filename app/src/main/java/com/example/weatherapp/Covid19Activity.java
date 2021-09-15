@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -13,6 +15,7 @@ import android.widget.PopupMenu;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ViewFlipper;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -27,7 +30,9 @@ import org.json.JSONObject;
 import java.text.DecimalFormat;
 
 public class Covid19Activity extends AppCompatActivity {
-    private final String urlCDC = "https://covidmaps.hanoi.gov.vn/";
+    private final String urlCDC = "https://soyte.hanoi.gov.vn/phong-chong-dich-benh-do-virus-ncov";
+    private final String url6Buoc = "https://www.hcmcpv.org.vn/tin-tuc/6-buoc-trong-quy-trinh-rua-tay-thuong-quy-theo-huong-dan-cua-bo-y-te-1491861950";
+    private final String url5K = "https://covid19.gov.vn/bo-y-te-khuyen-cao-5k-chung-song-an-toan-voi-dich-benh-1717130215.htm";
     private final String urlVN = "https://disease.sh/v3/covid-19/countries/vn";
     private final String urlGlobal = "https://disease.sh/v3/covid-19/all";
     private final String urlVacVN = "https://disease.sh/v3/covid-19/vaccine/coverage/countries/vn?lastdays=1";
@@ -35,7 +40,9 @@ public class Covid19Activity extends AppCompatActivity {
     TextView txtConfirm, txtRecover, txtDeath, txtVaccine, txtQR;
     Button btnCall, btnSMS;
     LinearLayout linearMenu;
-    ImageView imgFlag, imgDown, imgBack, imgCDC;
+    ImageView imgFlag, imgDown, imgBack, imageViewCDC, imageView5K, imageView6Buoc;
+    ViewFlipper imgCDC;
+    Animation in, out;
 
 
     @Override
@@ -45,6 +52,14 @@ public class Covid19Activity extends AppCompatActivity {
         overridePendingTransition(R.anim.side_in_right, R.anim.side_out_left);
 
         Anhxa();
+
+        in = AnimationUtils.loadAnimation(this, R.anim.side_in_right);
+        out = AnimationUtils.loadAnimation(this, R.anim.side_out_left);
+        imgCDC.setInAnimation(in);
+        imgCDC.setOutAnimation(out);
+
+        imgCDC.setFlipInterval(2000);
+        imgCDC.setAutoStart(true);
 
         fetchData(urlVN);
         fetchVaccineData();
@@ -84,7 +99,16 @@ public class Covid19Activity extends AppCompatActivity {
             }
         });
 
-        imgCDC.setOnClickListener(new View.OnClickListener() {
+        imageView5K.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Covid19Activity.this, CDCHanoi.class);
+                intent.putExtra("linkCDC", url5K);
+                startActivity(intent);
+            }
+        });
+
+        imageViewCDC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Covid19Activity.this, CDCHanoi.class);
@@ -92,6 +116,16 @@ public class Covid19Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        imageView6Buoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Covid19Activity.this, CDCHanoi.class);
+                intent.putExtra("linkCDC", url6Buoc);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void ShowMenu() {
@@ -182,6 +216,9 @@ public class Covid19Activity extends AppCompatActivity {
     }
 
     private void Anhxa() {
+        imageView6Buoc = findViewById(R.id.quyTrinh6Buoc);
+        imageView5K = findViewById(R.id.quyTac5K);
+        imageViewCDC = findViewById(R.id.cdc);
         imgCDC     = findViewById(R.id.imageViewCDC);
         txtQR      = findViewById(R.id.textViewQR);
         imgBack    = findViewById(R.id.imageViewBackToMain);

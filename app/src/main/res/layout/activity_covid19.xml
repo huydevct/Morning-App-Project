@@ -8,14 +8,14 @@
     tools:context=".Covid19Activity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@drawable/constran_custom"
         android:id="@+id/death"
         android:layout_width="158dp"
         android:layout_height="117dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/confirm"
+        android:background="@drawable/constran_custom"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/confirm">
+        app:layout_constraintTop_toBottomOf="@+id/buttonSMS">
 
         <ImageView
             android:id="@+id/imageView7"
@@ -176,11 +176,11 @@
         android:layout_width="153dp"
         android:layout_height="118dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
         android:background="@drawable/constran_custom"
+        app:layout_constraintBottom_toBottomOf="@+id/death"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewCDC">
+        app:layout_constraintTop_toTopOf="@+id/death">
 
         <ImageView
 
@@ -214,7 +214,7 @@
             android:layout_marginStart="6dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/medium"
-            android:text="6,555,555"
+            android:text="TextView"
             android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView3" />
@@ -320,21 +320,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <ViewFlipper
         android:id="@+id/imageViewCDC"
         android:layout_width="235dp"
         android:layout_height="126dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="45dp"
+        android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:srcCompat="@drawable/home_banner_bottom" />
+        app:srcCompat="@drawable/home_banner_bottom">
+
+        <ImageView
+            android:id="@+id/cdc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cdc" />
+
+        <ImageView
+            android:id="@+id/quyTrinh6Buoc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/quy_trinh_6_buoc" />
+
+        <ImageView
+            android:id="@+id/quyTac5K"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/k5" />
+    </ViewFlipper>
 
     <Button
         android:id="@+id/buttonCall"
         android:layout_width="105dp"
         android:layout_height="44dp"
-        android:layout_marginStart="2dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="6dp"
         android:background="@drawable/call_button"
@@ -342,15 +363,12 @@
         android:drawablePadding="2dp"
         android:text="Call"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toEndOf="@+id/imageViewCDC"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutMenu" />
 
     <Button
         android:id="@+id/buttonSMS"
         android:layout_width="106dp"
         android:layout_height="41dp"
-        android:layout_marginStart="1dp"
         android:layout_marginTop="9dp"
         android:layout_marginEnd="6dp"
         android:background="@drawable/send_sms_button"
@@ -358,7 +376,6 @@
         android:drawablePadding="2dp"
         android:text="SMS"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageViewCDC"
         app:layout_constraintTop_toBottomOf="@+id/buttonCall" />
 
     <ImageView
