@@ -19,10 +19,10 @@ import android.widget.PopupMenu;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    ImageButton btnTienIch, btnSearch;
+    ImageButton btnSearch;
     EditText edtSearch;
     WebView webViewSearch;
-    ImageView imgNext, imgBack, imgReload;
+    ImageView imgNext, imgBack, imgReload, imgWeather, imgNews, imgCovid, imgTodo, imgHome;
     String URL = "";
 
     @Override
@@ -66,6 +66,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        imgNews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, TinTucTongHop.class));
+            }
+        });
+
+        imgWeather.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, WeatherApp.class));
+            }
+        });
+
+        imgTodo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ToDoActivity.class));
+            }
+        });
+
+        imgCovid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, Covid19Activity.class));
+            }
+        });
+
         imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,10 +126,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnTienIch.setOnClickListener(new View.OnClickListener() {
+        imgHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ShowMenu();
+                startActivity(new Intent(MainActivity.this, WelComeActivity.class));
             }
         });
 
@@ -111,37 +139,17 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setJavaScriptEnabled(true);
     }
     private void Anhxa(){
-        btnTienIch = findViewById(R.id.buttonTienIch);
-        btnSearch  = findViewById(R.id.buttonSearch);
-        edtSearch  = findViewById(R.id.editTextTimKiem);
+        imgHome     = findViewById(R.id.imageButtonHome);
+        imgWeather  = findViewById(R.id.imageButtonWeather);
+        imgTodo     = findViewById(R.id.imageButtonTodo);
+        imgCovid    = findViewById(R.id.imageButtonCovid);
+        imgNews     = findViewById(R.id.imageButtonNews);
+        btnSearch   = findViewById(R.id.buttonSearch);
+        edtSearch   = findViewById(R.id.editTextTimKiem);
         webViewSearch = findViewById(R.id.webViewSearch);
-        imgBack = findViewById(R.id.imageViewBack);
-        imgNext = findViewById(R.id.imageViewNext);
-        imgReload  = findViewById(R.id.imageViewReload);
+        imgBack     = findViewById(R.id.imageViewBack);
+        imgNext     = findViewById(R.id.imageViewNext);
+        imgReload   = findViewById(R.id.imageViewReload);
     }
-    private void ShowMenu(){
-        PopupMenu popupMenu = new PopupMenu(this, btnTienIch);
-        popupMenu.getMenuInflater().inflate(R.menu.menu_popup, popupMenu.getMenu());
-        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem menuItem) {
-                switch (menuItem.getItemId()){
-                    case R.id.menuWeather:
-                        startActivity(new Intent(MainActivity.this, WeatherApp.class));
-                        break;
-                    case R.id.menuTinTuc:
-                        startActivity(new Intent(MainActivity.this, TinTucTongHop.class));
-                        break;
-                    case R.id.menuCovid19:
-                        startActivity(new Intent(MainActivity.this, Covid19Activity.class));
-                        break;
-                    case R.id.menuToDo:
-                        startActivity(new Intent(MainActivity.this, ToDoActivity.class));
-                        break;
-                }
-                return false;
-            }
-        });
-        popupMenu.show();
-    }
+
 }

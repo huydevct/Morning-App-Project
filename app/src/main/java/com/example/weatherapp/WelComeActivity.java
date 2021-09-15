@@ -16,6 +16,7 @@ public class WelComeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wel_come);
+        overridePendingTransition(R.anim.side_in_right, R.anim.side_out_left);
 
         btnStart = findViewById(R.id.buttonStart);
         imgCovid = findViewById(R.id.imageViewCovid);

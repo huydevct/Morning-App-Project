@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A6F6A9"
+    android:background="#E65454"
     tools:context=".ToDoActivity">
 
     <LinearLayout

@@ -14,7 +14,7 @@
         android:layout_marginTop="88dp"
         android:background="@drawable/btn_start_custom"
         android:fontFamily="@font/graphikmedium"
-        android:text="Let Start"
+        android:text="Go"
         android:textAllCaps="false"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"

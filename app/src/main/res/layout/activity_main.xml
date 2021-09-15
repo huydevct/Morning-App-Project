@@ -17,27 +17,54 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:layout_marginLeft="5dp"
-                    android:id="@+id/textView"
-                    android:textColor="#FFFFFF"
-                    android:layout_width="243dp"
-                    android:layout_height="42dp"
-                    android:layout_marginTop="4dp"
-                    android:text="News Weather "
-                    android:textSize="30sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                <ImageButton
+                    android:id="@+id/imageButtonWeather"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="fitCenter"
+                    android:background="@null"
+                    app:srcCompat="@drawable/weather" />
 
                 <ImageButton
-                    android:id="@+id/buttonTienIch"
+                    android:id="@+id/imageButtonNews"
                     android:layout_width="60dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginLeft="50dp"
-                    android:background="#8ACAFB"
                     android:layout_height="60dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="10dp"
+                    android:scaleType="fitCenter"
+                    android:background="@null"
+                    app:srcCompat="@drawable/news" />
+
+                <ImageButton
+                    android:id="@+id/imageButtonCovid"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="fitCenter"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@null"
+                    app:srcCompat="@drawable/covid_icon" />
+
+                <ImageButton
+                    android:id="@+id/imageButtonTodo"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="10dp"
+                    android:scaleType="fitCenter"
+                    android:background="@null"
+                    app:srcCompat="@drawable/todo" />
+
+                <ImageButton
+                    android:id="@+id/imageButtonHome"
+                    android:layout_width="70dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="2dp"
                     android:scaleType="fitXY"
-                    android:src="@drawable/popup" />
+                    android:background="@null"
+                    app:srcCompat="@drawable/home_icon" />
         </LinearLayout>
 
         <LinearLayout
@@ -107,7 +134,6 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_marginLeft="16dp"
-                            android:layout_marginTop="2dp"
                             android:background="@null"
                             android:scaleType="fitXY"
                             android:src="@drawable/search_icon"
