@@ -196,7 +196,7 @@ public class Covid19Activity extends AppCompatActivity {
                             JSONObject jsonObject = new JSONObject(response);
 
                             JSONObject jsonObjectTimeline = jsonObject.getJSONObject("timeline");
-                            String vac = jsonObjectTimeline.getString("9/12/21");
+                            String vac = jsonObjectTimeline.getString("9/24/21");
                             String vacFormat = formatNum(vac);
 
                             txtVaccine.setText(vacFormat);
