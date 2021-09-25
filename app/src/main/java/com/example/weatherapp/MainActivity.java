@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         imgNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, TinTucTongHop.class));
+                startActivity(new Intent(MainActivity.this, NewsApp.class));
             }
         });
 

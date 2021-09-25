@@ -34,7 +34,7 @@ public class WelComeActivity extends AppCompatActivity {
         imgNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(WelComeActivity.this, TinTucTongHop.class));
+                startActivity(new Intent(WelComeActivity.this, NewsApp.class));
             }
         });
 
