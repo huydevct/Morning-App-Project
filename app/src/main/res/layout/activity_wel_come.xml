@@ -13,7 +13,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="88dp"
         android:background="@drawable/btn_start_custom"
-        android:fontFamily="@font/arizonia"
+        android:fontFamily="@font/bad_script"
         android:text="Start"
         android:textAllCaps="false"
         android:textSize="16sp"
