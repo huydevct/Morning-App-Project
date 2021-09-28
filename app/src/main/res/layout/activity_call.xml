@@ -15,7 +15,7 @@
         android:fontFamily="@font/bold"
         android:gravity="center"
         android:text="Hot Line"
-        android:textColor="#000000"
+        android:textColor="#FF0000"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

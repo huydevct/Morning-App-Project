@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#94D0FF"
+    android:background="#ffff"
     tools:context=".CDCHanoi">
 
     <WebView
         android:id="@+id/webViewCDCHanoi"
         android:layout_width="0dp"
-        android:layout_height="465dp"
+        android:layout_height="518dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -18,38 +18,25 @@
 
     <ImageView
         android:id="@+id/imageViewBackCDCHanoi"
-        android:layout_width="52dp"
-        android:layout_height="46dp"
+        android:layout_width="53dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/back" />
+        app:srcCompat="@drawable/back_back" />
 
-    <ImageView
-        android:id="@+id/imageViewPrevCDC"
-        android:layout_width="47dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewBackCDCHanoi"
-        app:srcCompat="@drawable/back_icon" />
-
-    <ImageView
-        android:id="@+id/imageViewNextCDC"
-        android:layout_width="49dp"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="190dp"
         android:layout_height="37dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageViewPrevCDC"
-        app:layout_constraintStart_toEndOf="@+id/imageViewPrevCDC"
-        app:layout_constraintTop_toTopOf="@+id/imageViewPrevCDC"
-        app:srcCompat="@drawable/next_icon" />
-
-    <ImageView
-        android:id="@+id/imageViewReloadCDC"
-        android:layout_width="42dp"
-        android:layout_height="41dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageViewNextCDC"
-        app:layout_constraintStart_toEndOf="@+id/imageViewNextCDC"
-        app:layout_constraintTop_toTopOf="@+id/imageViewNextCDC"
-        app:srcCompat="@drawable/reload_icon" />
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Specific "
+        android:textAlignment="center"
+        android:textColor="#03A9F4"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

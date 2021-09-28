@@ -2,6 +2,7 @@ package com.example.weatherapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,7 @@ public class CDCHanoi extends AppCompatActivity {
     WebView webViewCDC;
     ImageView imgBackCDC, imgPrev, imgNext, imgReload;
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,9 +25,9 @@ public class CDCHanoi extends AppCompatActivity {
 
         imgBackCDC = findViewById(R.id.imageViewBackCDCHanoi);
         webViewCDC = findViewById(R.id.webViewCDCHanoi);
-        imgPrev    = findViewById(R.id.imageViewPrevCDC);
-        imgNext    = findViewById(R.id.imageViewNextCDC);
-        imgReload  = findViewById(R.id.imageViewReloadCDC);
+//        imgPrev    = findViewById(R.id.imageViewPrevCDC);
+//        imgNext    = findViewById(R.id.imageViewNextCDC);
+//        imgReload  = findViewById(R.id.imageViewReloadCDC);
 
         imgBackCDC.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,34 +46,34 @@ public class CDCHanoi extends AppCompatActivity {
         webSettings.setDisplayZoomControls(false);
         webSettings.setJavaScriptEnabled(true);
 
-        imgPrev.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(webViewCDC.canGoBack()){
-                    webViewCDC.goBack();
-                    Toast.makeText(CDCHanoi.this, "Trang trước...", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(CDCHanoi.this, "Không Có Dữ Liệu Trang Trước Để Load!", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-        imgNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(webViewCDC.canGoForward()){
-                    webViewCDC.goForward();
-                    Toast.makeText(CDCHanoi.this, "Trang sau...", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(CDCHanoi.this, "Không Có Dữ Liệu Trang Sau Để Load!", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-        imgReload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                webViewCDC.reload();
-            }
-        });
+//        imgPrev.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if(webViewCDC.canGoBack()){
+//                    webViewCDC.goBack();
+//                    Toast.makeText(CDCHanoi.this, "Trang trước...", Toast.LENGTH_SHORT).show();
+//                }else{
+//                    Toast.makeText(CDCHanoi.this, "Không Có Dữ Liệu Trang Trước Để Load!", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
+//        imgNext.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if(webViewCDC.canGoForward()){
+//                    webViewCDC.goForward();
+//                    Toast.makeText(CDCHanoi.this, "Trang sau...", Toast.LENGTH_SHORT).show();
+//                }else{
+//                    Toast.makeText(CDCHanoi.this, "Không Có Dữ Liệu Trang Sau Để Load!", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
+//        imgReload.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                webViewCDC.reload();
+//            }
+//        });
 
     }
 }
