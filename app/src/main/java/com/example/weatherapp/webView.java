@@ -16,7 +16,6 @@ public class webView extends AppCompatActivity {
     WebView webView;
     ImageView backWeb;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -36,7 +36,6 @@ public class WeatherNextDay extends AppCompatActivity {
     CustomAdapter adapter;
     ArrayList<ThoiTiet> arrayList;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

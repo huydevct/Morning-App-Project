@@ -46,8 +46,8 @@ public class CustomAdapter extends BaseAdapter {
 
         ThoiTiet thoiTiet = thoiTietArrayList.get(i);
 
-        TextView txtDay = view.findViewById(R.id.textViewTime);
-        TextView txtStatus = view.findViewById(R.id.textViewStatus);
+        TextView txtDay     = view.findViewById(R.id.textViewTime);
+        TextView txtStatus  = view.findViewById(R.id.textViewStatus);
         TextView txtMaxTemp = view.findViewById(R.id.textViewMaxTemp);
         TextView txtMinTemp = view.findViewById(R.id.textViewMinTemp);
         ImageView imgStatus = view.findViewById(R.id.imageViewStatus);

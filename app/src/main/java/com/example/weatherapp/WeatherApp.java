@@ -35,7 +35,6 @@ public class WeatherApp extends AppCompatActivity {
     String City = "";
     String cityChange = "";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -183,7 +182,6 @@ public class WeatherApp extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
                     }
                 });
         requestQueue.add(stringRequest);

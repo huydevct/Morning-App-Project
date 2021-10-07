@@ -81,11 +81,4 @@ public class QR extends AppCompatActivity {
             }
         }).check();
     }
-//
-//    @Override
-//    public void onPause() {
-//        mcodeScanner.releaseResources();
-//        super.onPause();
-//    }
-
 }

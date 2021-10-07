@@ -12,7 +12,6 @@ import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
 public class NewsApp extends AppCompatActivity {
-
     TabLayout tabLayout;
     TabItem mhome, msciene, mtech, msport, mhealth, mentertainment;
     PagerAdapter pagerAdapter;
@@ -20,7 +19,7 @@ public class NewsApp extends AppCompatActivity {
     ViewPager viewPager;
     ImageView back;
 
-    String api = "621001f34dd744df9922abc6ca875bfb";
+//    String api = "621001f34dd744df9922abc6ca875bfb";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,28 +54,25 @@ public class NewsApp extends AppCompatActivity {
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-
             }
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-
             }
         });
-
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
     }
 
     private void Anhxa() {
-        mhome = findViewById(R.id.home);
-        msciene = findViewById(R.id.science);
-        mtech = findViewById(R.id.technology);
-        msport = findViewById(R.id.sports);
-        mentertainment = findViewById(R.id.entertainment);
-        mhealth = findViewById(R.id.health);
-        viewPager = findViewById(R.id.fragmentcontainer);
-        tabLayout = findViewById(R.id.include);
-        back = findViewById(R.id.back);
+        mhome           = findViewById(R.id.home);
+        msciene         = findViewById(R.id.science);
+        mtech           = findViewById(R.id.technology);
+        msport          = findViewById(R.id.sports);
+        mentertainment  = findViewById(R.id.entertainment);
+        mhealth         = findViewById(R.id.health);
+        viewPager       = findViewById(R.id.fragmentcontainer);
+        tabLayout       = findViewById(R.id.include);
+        back            = findViewById(R.id.back);
     }
 }

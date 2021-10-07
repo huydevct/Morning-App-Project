@@ -38,12 +38,10 @@ public class HomeFragment extends Fragment {
 
         findNews();
 
-
         return view;
     }
 
     private void findNews() {
-
         ApiUtilities.getApiInterface().getNews(country, 100, api).enqueue(new Callback<mainNews>() {
             @Override
             public void onResponse(Call<mainNews> call, Response<mainNews> response) {
@@ -55,7 +53,6 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onFailure(Call<mainNews> call, Throwable t) {
-
             }
         });
     }

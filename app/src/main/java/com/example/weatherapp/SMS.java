@@ -45,6 +45,7 @@ public class SMS extends AppCompatActivity {
         });
     }
 
+    //Send Intent for SMS
     private void sendSMS_by_Intent_ACTION_SEND() {
         String number = edtNumber.getText().toString().trim();
         String message = edtMessage.getText().toString();

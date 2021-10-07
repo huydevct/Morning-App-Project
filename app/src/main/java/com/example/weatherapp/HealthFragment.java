@@ -38,12 +38,10 @@ public class HealthFragment extends Fragment {
 
         findNews();
 
-
         return view;
     }
 
     private void findNews() {
-
         ApiUtilities.getApiInterface().getCategoryNews(country, category, 100, api).enqueue(new Callback<mainNews>() {
             @Override
             public void onResponse(retrofit2.Call<mainNews> call, Response<mainNews> response) {
@@ -55,7 +53,6 @@ public class HealthFragment extends Fragment {
 
             @Override
             public void onFailure(Call<mainNews> call, Throwable t) {
-
             }
         });
     }

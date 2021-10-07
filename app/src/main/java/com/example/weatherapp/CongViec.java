@@ -13,15 +13,7 @@ public class CongViec {
         return IdCV;
     }
 
-    public void setIdCV(int idCV) {
-        IdCV = idCV;
-    }
-
     public String getTenCV() {
         return TenCV;
-    }
-
-    public void setTenCV(String tenCV) {
-        TenCV = tenCV;
     }
 }

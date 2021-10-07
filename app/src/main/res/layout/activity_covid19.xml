@@ -359,7 +359,7 @@
         android:layout_marginTop="64dp"
         android:layout_marginEnd="6dp"
         android:background="@drawable/call_button"
-        android:drawableLeft="@drawable/ic_phone"
+        android:drawableStart="@drawable/ic_phone"
         android:drawablePadding="2dp"
         android:text="Call"
         app:layout_constraintEnd_toEndOf="parent"

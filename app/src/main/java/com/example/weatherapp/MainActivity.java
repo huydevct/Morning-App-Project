@@ -139,17 +139,17 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setJavaScriptEnabled(true);
     }
     private void Anhxa(){
-        imgHome     = findViewById(R.id.imageButtonHome);
-        imgWeather  = findViewById(R.id.imageButtonWeather);
-        imgTodo     = findViewById(R.id.imageButtonTodo);
-        imgCovid    = findViewById(R.id.imageButtonCovid);
-        imgNews     = findViewById(R.id.imageButtonNews);
-        btnSearch   = findViewById(R.id.buttonSearch);
-        edtSearch   = findViewById(R.id.editTextTimKiem);
-        webViewSearch = findViewById(R.id.webViewSearch);
-        imgBack     = findViewById(R.id.imageViewBack);
-        imgNext     = findViewById(R.id.imageViewNext);
-        imgReload   = findViewById(R.id.imageViewReload);
+        imgHome         = findViewById(R.id.imageButtonHome);
+        imgWeather      = findViewById(R.id.imageButtonWeather);
+        imgTodo         = findViewById(R.id.imageButtonTodo);
+        imgCovid        = findViewById(R.id.imageButtonCovid);
+        imgNews         = findViewById(R.id.imageButtonNews);
+        btnSearch       = findViewById(R.id.buttonSearch);
+        edtSearch       = findViewById(R.id.editTextTimKiem);
+        webViewSearch   = findViewById(R.id.webViewSearch);
+        imgBack         = findViewById(R.id.imageViewBack);
+        imgNext         = findViewById(R.id.imageViewNext);
+        imgReload       = findViewById(R.id.imageViewReload);
     }
 
 }

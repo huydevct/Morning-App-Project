@@ -86,7 +86,6 @@ public class ToDoActivity extends AppCompatActivity {
         dialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-
             }
         });
 

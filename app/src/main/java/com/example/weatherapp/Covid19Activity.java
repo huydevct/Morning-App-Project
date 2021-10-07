@@ -2,6 +2,7 @@ package com.example.weatherapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -12,7 +13,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
@@ -43,7 +43,6 @@ public class Covid19Activity extends AppCompatActivity {
     ImageView imgFlag, imgDown, imgBack, imageViewCDC, imageView5K, imageView6Buoc;
     ViewFlipper imgCDC;
     Animation in, out;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,7 +124,6 @@ public class Covid19Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
     private void ShowMenu() {
@@ -169,11 +167,39 @@ public class Covid19Activity extends AppCompatActivity {
                             txtConfirm.setText(formatNum(jsonObject.getString("cases")));
                             txtRecover.setText(formatNum(jsonObject.getString("recovered")));
                             txtDeath.setText(formatNum(jsonObject.getString("deaths")));
-
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(Covid19Activity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+        RequestQueue requestQueue = Volley.newRequestQueue(Covid19Activity.this);
+        requestQueue.add(request);
+    }
 
+    private void fetchVaccineData(){
+        StringRequest request = new StringRequest(Request.Method.GET, urlVacVN,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+
+                            //Call JSON data to app //Error
+                            JSONObject jsonObjectTimeline = jsonObject.getJSONObject("timeline");
+                            String vac = jsonObjectTimeline.getString("10/7/21");
+
+                            String vacFormat = formatNum(vac);
+
+                            txtVaccine.setText(vacFormat);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
                 },
                 new Response.ErrorListener() {
@@ -187,38 +213,10 @@ public class Covid19Activity extends AppCompatActivity {
         requestQueue.add(request);
     }
 
-    private void fetchVaccineData(){
-        StringRequest request = new StringRequest(Request.Method.GET, urlVacVN,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONObject jsonObject = new JSONObject(response);
-
-                            JSONObject jsonObjectTimeline = jsonObject.getJSONObject("timeline");
-                            String vac = jsonObjectTimeline.getString("9/24/21");
-                            String vacFormat = formatNum(vac);
-
-                            txtVaccine.setText(vacFormat);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                    }
-                });
-
-        RequestQueue requestQueue = Volley.newRequestQueue(Covid19Activity.this);
-        requestQueue.add(request);
-    }
-
     private void Anhxa() {
-        imageView6Buoc = findViewById(R.id.quyTrinh6Buoc);
-        imageView5K = findViewById(R.id.quyTac5K);
-        imageViewCDC = findViewById(R.id.cdc);
+        imageView6Buoc  = findViewById(R.id.quyTrinh6Buoc);
+        imageView5K     = findViewById(R.id.quyTac5K);
+        imageViewCDC    = findViewById(R.id.cdc);
         imgCDC     = findViewById(R.id.imageViewCDC);
         txtQR      = findViewById(R.id.textViewQR);
         imgBack    = findViewById(R.id.imageViewBackToMain);
