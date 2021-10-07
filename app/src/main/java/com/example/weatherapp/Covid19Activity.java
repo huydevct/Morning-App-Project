@@ -1,8 +1,6 @@
 package com.example.weatherapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -167,6 +165,7 @@ public class Covid19Activity extends AppCompatActivity {
                             txtConfirm.setText(formatNum(jsonObject.getString("cases")));
                             txtRecover.setText(formatNum(jsonObject.getString("recovered")));
                             txtDeath.setText(formatNum(jsonObject.getString("deaths")));
+                            txtVaccine.setText(formatNum(jsonObject.getString("todayCases")));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -196,7 +195,7 @@ public class Covid19Activity extends AppCompatActivity {
 
                             String vacFormat = formatNum(vac);
 
-                            txtVaccine.setText(vacFormat);
+//                            txtVaccine.setText(vacFormat);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
