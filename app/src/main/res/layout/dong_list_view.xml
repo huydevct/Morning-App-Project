@@ -14,7 +14,7 @@
 
         <TextView
             android:id="@+id/textViewTime"
-            android:layout_width="139dp"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:textColor="#2C0505"
             android:gravity="center"
