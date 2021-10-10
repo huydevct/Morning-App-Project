@@ -5,152 +5,70 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#A2FFF6"
+        android:background="@drawable/welcome_custom"
         tools:context=".MainActivity">
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:background="@drawable/linear_main_custom"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            app:layout_constraintEnd_toEndOf="parent"
+
+        <ImageButton
+            android:id="@+id/imageButtonWeather"
+            android:layout_width="106dp"
+            android:layout_height="104dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="100dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/weather" />
 
-                <ImageButton
-                    android:id="@+id/imageButtonWeather"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:scaleType="fitCenter"
-                    android:background="@null"
-                    app:srcCompat="@drawable/weather" />
+        <ImageButton
+            android:id="@+id/imageButtonNews"
+            android:layout_width="106dp"
+            android:layout_height="104dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="48dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageButtonWeather"
+            app:srcCompat="@drawable/news" />
 
-                <ImageButton
-                    android:id="@+id/imageButtonNews"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginLeft="10dp"
-                    android:scaleType="fitCenter"
-                    android:background="@null"
-                    app:srcCompat="@drawable/news" />
+        <ImageButton
+            android:id="@+id/imageButtonCovid"
+            android:layout_width="106dp"
+            android:layout_height="104dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="44dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/covid_icon" />
 
-                <ImageButton
-                    android:id="@+id/imageButtonCovid"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:scaleType="fitCenter"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="2dp"
-                    android:background="@null"
-                    app:srcCompat="@drawable/covid_icon" />
+        <ImageButton
+            android:id="@+id/imageButtonTodo"
+            android:layout_width="106dp"
+            android:layout_height="104dp"
+            android:layout_marginEnd="44dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="@+id/imageButtonNews"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageButtonNews"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/todo" />
 
-                <ImageButton
-                    android:id="@+id/imageButtonTodo"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginLeft="10dp"
-                    android:scaleType="fitCenter"
-                    android:background="@null"
-                    app:srcCompat="@drawable/todo" />
-
-                <ImageButton
-                    android:id="@+id/imageButtonHome"
-                    android:layout_width="70dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="2dp"
-                    android:scaleType="fitXY"
-                    android:background="@null"
-                    app:srcCompat="@drawable/home_icon" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="500dp"
-            android:orientation="vertical"
-            android:weightSum="10"
+        <ImageButton
+            android:id="@+id/imageButtonHome"
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="38dp"
+            android:background="@null"
+            android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+            app:srcCompat="@drawable/home_icon" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:background="#fff"
-                    android:orientation="horizontal"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-
-                        <ImageView
-                            android:id="@+id/imageViewBack"
-                            android:layout_width="28dp"
-                            android:layout_height="28dp"
-                            android:layout_marginTop="10dp"
-                            android:background="@null"
-                            app:srcCompat="@drawable/back_icon"
-                            tools:layout_editor_absoluteY="70dp" />
-
-                        <ImageView
-                            android:id="@+id/imageViewNext"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_marginTop="8dp"
-                            android:background="@null"
-                            app:srcCompat="@drawable/next_icon"
-                            tools:layout_editor_absoluteX="31dp"
-                            tools:layout_editor_absoluteY="68dp" />
-
-                        <ImageView
-                            android:id="@+id/imageViewReload"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_marginTop="8dp"
-                            android:background="@null"
-                            app:srcCompat="@drawable/reload_icon"
-                            tools:layout_editor_absoluteX="65dp"
-                            tools:layout_editor_absoluteY="69dp" />
-
-                        <EditText
-                            android:id="@+id/editTextTimKiem"
-                            android:layout_width="210dp"
-                            android:layout_height="40dp"
-                            android:layout_marginTop="5dp"
-                            android:ems="10"
-                            android:hint="Tìm Kiếm..."
-                            android:inputType="textPersonName"
-                            android:textColor="#2C0505"
-                            tools:layout_editor_absoluteX="98dp"
-                            tools:layout_editor_absoluteY="68dp" />
-
-                        <ImageButton
-                            android:id="@+id/buttonSearch"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginStart="16dp"
-                            android:background="@null"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/searchh"
-                            tools:layout_editor_absoluteX="305dp"
-                            tools:layout_editor_absoluteY="65dp" />
-                </LinearLayout>
-
-                <WebView
-                    android:id="@+id/webViewSearch"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="9"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="parent" />
-        </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

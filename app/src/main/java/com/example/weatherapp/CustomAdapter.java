@@ -38,7 +38,6 @@ public class CustomAdapter extends BaseAdapter {
         return i;
     }
 
-
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -64,4 +63,6 @@ public class CustomAdapter extends BaseAdapter {
 
         return view;
     }
+
+
 }

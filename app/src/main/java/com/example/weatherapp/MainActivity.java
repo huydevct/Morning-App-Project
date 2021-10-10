@@ -19,11 +19,7 @@ import android.widget.PopupMenu;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    ImageButton btnSearch;
-    EditText edtSearch;
-    WebView webViewSearch;
-    ImageView imgNext, imgBack, imgReload, imgWeather, imgNews, imgCovid, imgTodo, imgHome;
-    String URL = "";
+    ImageView imgWeather, imgNews, imgCovid, imgTodo, imgHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,39 +28,6 @@ public class MainActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.side_in_right, R.anim.side_out_left);
 
         Anhxa();
-
-        edtSearch.setShowSoftInputOnFocus(false);
-        webViewSearch.setWebViewClient(new WebViewClient());
-        String urlMain = edtSearch.getText().toString().trim();
-        if(urlMain.equals("")){
-            URL = "https://google.com";
-            webViewSearch.loadUrl(URL);
-            edtSearch.setText(webViewSearch.getUrl());
-        }else{
-            URL = urlMain;
-            webViewSearch.loadUrl("https://"+urlMain);
-            edtSearch.setText(webViewSearch.getUrl());
-        }
-
-        btnSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String url = edtSearch.getText().toString().trim();
-                if(url.equals("https://google.com/")){
-                    webViewSearch.loadUrl(url);
-                    edtSearch.setText(webViewSearch.getUrl());
-                }else if(url.contains("https://")){
-                    URL = url;
-                    webViewSearch.loadUrl(url);
-                    edtSearch.setText(webViewSearch.getUrl());
-                }else{
-                    URL = url;
-                    webViewSearch.loadUrl("https://" + url);
-                    edtSearch.setText(webViewSearch.getUrl());
-                }
-
-            }
-        });
 
         imgNews.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,38 +57,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        imgBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(webViewSearch.canGoBack()){
-                    webViewSearch.goBack();
-                    edtSearch.setText(webViewSearch.getUrl());
-                    Toast.makeText(MainActivity.this, "Trang trước...", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(MainActivity.this, "Không Có Dữ Liệu Trang Trước Để Load!", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-        imgNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(webViewSearch.canGoForward()){
-                    webViewSearch.goForward();
-                    edtSearch.setText(webViewSearch.getUrl());
-                    Toast.makeText(MainActivity.this, "Trang sau...", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(MainActivity.this, "Không Có Dữ Liệu Trang Sau Để Load!", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-        imgReload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                webViewSearch.reload();
-                edtSearch.setText(webViewSearch.getUrl());
-            }
-        });
-
         imgHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -133,10 +64,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        WebSettings webSettings = webViewSearch.getSettings();
-        webSettings.setBuiltInZoomControls(true);
-        webSettings.setDisplayZoomControls(false);
-        webSettings.setJavaScriptEnabled(true);
     }
     private void Anhxa(){
         imgHome         = findViewById(R.id.imageButtonHome);
@@ -144,12 +71,6 @@ public class MainActivity extends AppCompatActivity {
         imgTodo         = findViewById(R.id.imageButtonTodo);
         imgCovid        = findViewById(R.id.imageButtonCovid);
         imgNews         = findViewById(R.id.imageButtonNews);
-        btnSearch       = findViewById(R.id.buttonSearch);
-        edtSearch       = findViewById(R.id.editTextTimKiem);
-        webViewSearch   = findViewById(R.id.webViewSearch);
-        imgBack         = findViewById(R.id.imageViewBack);
-        imgNext         = findViewById(R.id.imageViewNext);
-        imgReload       = findViewById(R.id.imageViewReload);
     }
 
 }

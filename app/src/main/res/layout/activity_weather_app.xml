@@ -25,13 +25,13 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:orientation="horizontal">
-
                 <ImageView
                     android:id="@+id/imageViewBackWeather"
                     android:layout_width="25dp"
                     android:layout_gravity="center"
                     android:layout_height="25dp"
                     android:src="@drawable/back" />
+
 
                 <TextView
                     android:id="@+id/textViewCity"
@@ -41,6 +41,7 @@
                     android:textColor="#fff"
                     android:text="Location"
                     android:textSize="24sp" />
+
             </LinearLayout>
 
             <TextView

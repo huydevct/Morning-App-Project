@@ -2,6 +2,7 @@ package com.example.weatherapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -91,6 +92,7 @@ public class WeatherApp extends AppCompatActivity {
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
+                    @SuppressLint("SetTextI18n")
                     @Override
                     public void onResponse(String response) {
                         try {
@@ -117,7 +119,7 @@ public class WeatherApp extends AppCompatActivity {
                             String status = jsonObjectWeather.getString("main");
                             txtStatus.setText(status);
 
-                            //Icon
+                            //Icon Glide
                             String icon = jsonObjectWeather.getString("icon");
                             GetIconImage(icon, imgIcon);
 

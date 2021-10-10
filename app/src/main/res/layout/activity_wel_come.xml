@@ -11,14 +11,13 @@
         android:id="@+id/buttonStart"
         android:layout_width="120dp"
         android:layout_height="50dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="84dp"
         android:background="@drawable/btn_start_custom"
         android:fontFamily="@font/bad_script"
         android:text="Start"
         android:textAllCaps="false"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
