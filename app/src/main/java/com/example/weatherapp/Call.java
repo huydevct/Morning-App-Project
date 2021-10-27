@@ -50,7 +50,6 @@ public class Call<M> extends AppCompatActivity {
 
     }
     private void askPermissionAndCall() {
-
         // With Android Level >= 23, you have to ask the user
         // for permission to Call.
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) { // 23
@@ -94,7 +93,7 @@ public class Call<M> extends AppCompatActivity {
                                            String permissions[], int[] grantResults) {
 
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        //
+
         switch (requestCode) {
             case MY_PERMISSION_REQUEST_CODE_CALL_PHONE: {
 

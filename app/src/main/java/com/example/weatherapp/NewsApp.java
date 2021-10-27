@@ -19,8 +19,6 @@ public class NewsApp extends AppCompatActivity {
     ViewPager viewPager;
     ImageView back;
 
-//    String api = "621001f34dd744df9922abc6ca875bfb";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

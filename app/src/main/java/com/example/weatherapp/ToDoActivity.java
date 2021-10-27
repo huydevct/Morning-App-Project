@@ -8,21 +8,16 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ToDoActivity extends AppCompatActivity {
     Database database;
@@ -30,7 +25,6 @@ public class ToDoActivity extends AppCompatActivity {
     ArrayList<CongViec> arrayList;
     CongViecAdapter adapter;
     ListView listView;
-
     ImageView imagBack, imgAdd;
 
     @Override
@@ -142,9 +136,9 @@ public class ToDoActivity extends AppCompatActivity {
         dialog.setContentView(R.layout.dialog_todo);
         dialog.setCanceledOnTouchOutside(false);
 
-        EditText edtTen = dialog.findViewById(R.id.editTextAddTodo);
-        Button btnAdd = dialog.findViewById(R.id.btnAddToDo);
-        Button btnCancel = dialog.findViewById(R.id.btnCancelTodo);
+        EditText edtTen     = dialog.findViewById(R.id.editTextAddTodo);
+        Button btnAdd       = dialog.findViewById(R.id.btnAddToDo);
+        Button btnCancel    = dialog.findViewById(R.id.btnCancelTodo);
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -170,6 +164,4 @@ public class ToDoActivity extends AppCompatActivity {
 
         dialog.show();
     }
-
-
 }

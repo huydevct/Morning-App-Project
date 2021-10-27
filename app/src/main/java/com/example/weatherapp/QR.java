@@ -22,7 +22,7 @@ import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
 public class QR extends AppCompatActivity {
-    private final int CAMERA_REQUEST_CODE = 101;
+//    private final int CAMERA_REQUEST_CODE = 101;
     CodeScannerView codeScanner;
     CodeScanner mcodeScanner;
 
@@ -37,6 +37,7 @@ public class QR extends AppCompatActivity {
     private void ReadCodeScanner(){
         codeScanner = findViewById(R.id.QRview);
         mcodeScanner = new CodeScanner(this, codeScanner);
+
         mcodeScanner.setDecodeCallback(new DecodeCallback() {
             @Override
             public void onDecoded(@NonNull Result result) {

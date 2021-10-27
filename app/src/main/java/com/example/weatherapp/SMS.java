@@ -53,6 +53,7 @@ public class SMS extends AppCompatActivity {
         Uri uri = Uri.parse("smsto:"+number);
         Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
         intent.putExtra("sms_body", message);
+
         try {
             startActivity(intent);
         } catch (Exception ex) {

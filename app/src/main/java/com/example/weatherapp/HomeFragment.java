@@ -19,7 +19,7 @@ import retrofit2.Response;
 
 
 public class HomeFragment extends Fragment {
-    String api = "621001f34dd744df9922abc6ca875bfb";
+    final String api = "621001f34dd744df9922abc6ca875bfb";
     ArrayList<ModelClass> modelClassArrayList;
     Adapter adapter;
     String country="us";

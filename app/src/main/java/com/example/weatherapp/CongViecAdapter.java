@@ -46,6 +46,7 @@ public class CongViecAdapter extends BaseAdapter {
         ImageView imgDelete, imgEdit;
         CheckBox checkBox;
     }
+
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder holder;
@@ -64,14 +65,14 @@ public class CongViecAdapter extends BaseAdapter {
         }else{
             holder = (ViewHolder) view.getTag();
         }
+
         CongViec congViec = congViecList.get(i);
         holder.txtTen.setText(congViec.getTenCV());
-
 
         holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                TextView textView = (TextView) holder.txtTen;
+                TextView textView = holder.txtTen;
                 if(b){
                     textView.setPaintFlags(textView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
                 }else{

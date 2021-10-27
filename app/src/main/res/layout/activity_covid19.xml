@@ -331,13 +331,6 @@
         app:srcCompat="@drawable/home_banner_bottom">
 
         <ImageView
-            android:id="@+id/cdc"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/cdc" />
-
-        <ImageView
             android:id="@+id/quyTrinh6Buoc"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -350,6 +343,13 @@
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:src="@drawable/k5" />
+
+        <ImageView
+            android:id="@+id/cdc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cdc" />
     </ViewFlipper>
 
     <Button
@@ -359,7 +359,7 @@
         android:layout_marginTop="64dp"
         android:layout_marginEnd="6dp"
         android:background="@drawable/call_button"
-        android:drawableStart="@drawable/ic_phone"
+        android:drawableLeft="@drawable/ic_phone"
         android:drawablePadding="2dp"
         android:text="Call"
         app:layout_constraintEnd_toEndOf="parent"

@@ -6,14 +6,12 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 public class PagerAdapter extends FragmentPagerAdapter {
-
     int tabcount;
 
     public PagerAdapter(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);
         tabcount = behavior;
     }
-
 
     @NonNull
     @Override

@@ -3,7 +3,6 @@ package com.example.weatherapp;
 import java.util.ArrayList;
 
 public class mainNews {
-
     private String status, totalResults;
     private ArrayList<ModelClass> articles;
 

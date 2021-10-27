@@ -1,7 +1,7 @@
 package com.example.weatherapp;
 
 public class ModelClass {
-    private String author, title, description, url, urlToImage, publishedAt;
+    private final String author, title, description, url, urlToImage, publishedAt;
 
     public ModelClass(String author, String title, String description, String url, String urlToImage, String publishedAt) {
         this.author = author;

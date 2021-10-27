@@ -52,6 +52,7 @@ public class Covid19Activity extends AppCompatActivity {
 
         in = AnimationUtils.loadAnimation(this, R.anim.side_in_right);
         out = AnimationUtils.loadAnimation(this, R.anim.side_out_left);
+
         imgCDC.setInAnimation(in);
         imgCDC.setOutAnimation(out);
 
@@ -127,6 +128,7 @@ public class Covid19Activity extends AppCompatActivity {
     private void ShowMenu() {
         PopupMenu popupMenu = new PopupMenu(Covid19Activity.this, imgDown);
         popupMenu.getMenuInflater().inflate(R.menu.menu_covid, popupMenu.getMenu());
+
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
@@ -154,6 +156,7 @@ public class Covid19Activity extends AppCompatActivity {
         return decimalFormat.format(numl);
     }
 
+
     private void fetchData(String url) {
         StringRequest request = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
@@ -166,6 +169,7 @@ public class Covid19Activity extends AppCompatActivity {
                             txtRecover.setText(formatNum(jsonObject.getString("recovered")));
                             txtDeath.setText(formatNum(jsonObject.getString("deaths")));
                             txtVaccine.setText(formatNum(jsonObject.getString("todayCases")));
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -177,6 +181,7 @@ public class Covid19Activity extends AppCompatActivity {
                         Toast.makeText(Covid19Activity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
+
         RequestQueue requestQueue = Volley.newRequestQueue(Covid19Activity.this);
         requestQueue.add(request);
     }
@@ -191,7 +196,7 @@ public class Covid19Activity extends AppCompatActivity {
 
                             //Call JSON data to app //Error
                             JSONObject jsonObjectTimeline = jsonObject.getJSONObject("timeline");
-                            String vac = jsonObjectTimeline.getString("10/7/21");
+                            String vac = jsonObjectTimeline.getString("10/17/21");
 
                             String vacFormat = formatNum(vac);
 

@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".NewsApp">
 
-
     <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_marginTop="0dp"
-        android:background="@color/white"
-        android:id="@+id/toolbar">
+        android:background="@color/white">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -100,7 +100,6 @@
         android:layout_height="match_parent"
         android:layout_below="@id/include"
         android:layout_marginTop="0dp">
-
     </androidx.viewpager.widget.ViewPager>
 
 </RelativeLayout>
