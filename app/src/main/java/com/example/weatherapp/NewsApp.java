@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -18,6 +19,7 @@ public class NewsApp extends AppCompatActivity {
     Toolbar mtoolbar;
     ViewPager viewPager;
     ImageView back;
+//    String first = "appear";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,9 @@ public class NewsApp extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                Intent intent = new Intent(NewsApp.this, MainActivity.class);
+//                intent.putExtra("check", first);
+//                startActivity(intent);
                 onBackPressed();
             }
         });

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebSettings;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     ImageView imgWeather, imgNews, imgCovid, imgTodo;
+//    String first = "appear";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +30,13 @@ public class MainActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.side_in_right, R.anim.side_out_left);
 
         Anhxa();
-        Toast.makeText(this, "Welcome!", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "Select app that you want to use", Toast.LENGTH_LONG).show();
+
+//        Intent intent = getIntent();
+//        String firstNews = intent.getStringExtra("check");
+//        Log.v("first", firstNews);
+//        welcome(first);
+
+        Toast.makeText(MainActivity.this, "Welcome!", Toast.LENGTH_SHORT).show();
 
         imgNews.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,16 +66,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        imgHome.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(MainActivity.this, WelComeActivity.class));
-//            }
-//        });
-
     }
+
+//    private void welcome(String first){
+//        if (first.equals("appear")){
+//            Toast.makeText(MainActivity.this, "Welcome!", Toast.LENGTH_SHORT).show();
+//        }else if(first.equals("hide")){
+//            return;
+//        }else{
+//            first = "hide";
+//        }
+//    }
+
     private void Anhxa(){
-//        imgHome         = findViewById(R.id.imageButtonHome);
         imgWeather      = findViewById(R.id.imageButtonWeather);
         imgTodo         = findViewById(R.id.imageButtonTodo);
         imgCovid        = findViewById(R.id.imageButtonCovid);
