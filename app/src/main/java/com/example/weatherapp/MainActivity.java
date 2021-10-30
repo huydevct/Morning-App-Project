@@ -19,7 +19,7 @@ import android.widget.PopupMenu;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    ImageView imgWeather, imgNews, imgCovid, imgTodo, imgHome;
+    ImageView imgWeather, imgNews, imgCovid, imgTodo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.side_in_right, R.anim.side_out_left);
 
         Anhxa();
+        Toast.makeText(this, "Select app that you want to use", Toast.LENGTH_LONG).show();
 
         imgNews.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,16 +58,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        imgHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, WelComeActivity.class));
-            }
-        });
+//        imgHome.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(MainActivity.this, WelComeActivity.class));
+//            }
+//        });
 
     }
     private void Anhxa(){
-        imgHome         = findViewById(R.id.imageButtonHome);
+//        imgHome         = findViewById(R.id.imageButtonHome);
         imgWeather      = findViewById(R.id.imageButtonWeather);
         imgTodo         = findViewById(R.id.imageButtonTodo);
         imgCovid        = findViewById(R.id.imageButtonCovid);

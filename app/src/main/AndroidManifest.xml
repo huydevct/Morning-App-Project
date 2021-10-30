@@ -22,7 +22,7 @@
             android:name=".NewsApp"
             android:exported="true" />
         <activity
-            android:name=".WelComeActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -56,9 +56,6 @@
             android:exported="true" />
         <activity
             android:name=".WeatherApp"
-            android:exported="true" />
-        <activity
-            android:name=".MainActivity"
             android:exported="true" />
 
         <meta-data
