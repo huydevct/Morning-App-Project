@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.side_in_right, R.anim.side_out_left);
 
         Anhxa();
+        Toast.makeText(this, "Welcome!", Toast.LENGTH_SHORT).show();
         Toast.makeText(this, "Select app that you want to use", Toast.LENGTH_LONG).show();
 
         imgNews.setOnClickListener(new View.OnClickListener() {
