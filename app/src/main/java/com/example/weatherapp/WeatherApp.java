@@ -173,7 +173,7 @@ public class WeatherApp extends AppCompatActivity {
                             Date dateSunset = new Date(lSunset*1000L);
                             SimpleDateFormat simpleDateFormatSunset = new SimpleDateFormat("hh:mm a");
                             String Sunset = simpleDateFormatSunset.format(dateSunset);
-                            txtSunrise.setText(Sunset);
+                            txtSunset.setText(Sunset);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
