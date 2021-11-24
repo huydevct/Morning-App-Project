@@ -29,7 +29,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:gravity="center"
-            android:layout_marginLeft="80dp"
+            android:layout_marginStart="80dp"
             android:textColor="#2C0505"
             android:text="Thành Phố"
             android:textSize="30sp"

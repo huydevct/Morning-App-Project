@@ -78,6 +78,7 @@ public class WeatherNextDay extends AppCompatActivity {
                     public void onResponse(String response) {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
+
                             // setText tên Thành Phố
                             JSONObject jsonObjectCity = jsonObject.getJSONObject("city");
                             String city = jsonObjectCity.getString("name");

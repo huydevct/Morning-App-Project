@@ -33,7 +33,6 @@ public class Covid19Activity extends AppCompatActivity {
     private final String url5K = "https://covid19.gov.vn/bo-y-te-khuyen-cao-5k-chung-song-an-toan-voi-dich-benh-1717130215.htm";
     private final String urlVN = "https://disease.sh/v3/covid-19/countries/vn";
     private final String urlGlobal = "https://disease.sh/v3/covid-19/all";
-    private final String urlVacVN = "https://disease.sh/v3/covid-19/vaccine/coverage/countries/vn?lastdays=1";
 
     TextView txtConfirm, txtRecover, txtDeath, txtVaccine, txtQR;
     Button btnCall, btnSMS;
@@ -60,7 +59,6 @@ public class Covid19Activity extends AppCompatActivity {
         imgCDC.setAutoStart(true);
 
         fetchData(urlVN);
-        fetchVaccineData();
 
         imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,12 +134,10 @@ public class Covid19Activity extends AppCompatActivity {
                     case R.id.menuVietNam:
                         imgFlag.setImageResource(R.drawable.vietnam_icon);
                         fetchData(urlVN);
-                        fetchVaccineData();
                         break;
                     case R.id.menuGlobal:
                         imgFlag.setImageResource(R.drawable.global_icon);
                         fetchData(urlGlobal);
-                        fetchVaccineData();
                         break;
                 }
                 return false;
@@ -186,36 +182,6 @@ public class Covid19Activity extends AppCompatActivity {
         requestQueue.add(request);
     }
 
-    private void fetchVaccineData(){
-        StringRequest request = new StringRequest(Request.Method.GET, urlVacVN,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONObject jsonObject = new JSONObject(response);
-
-                            //Call JSON data to app //Error
-                            JSONObject jsonObjectTimeline = jsonObject.getJSONObject("timeline");
-                            String vac = jsonObjectTimeline.getString("10/17/21");
-
-                            String vacFormat = formatNum(vac);
-
-//                            txtVaccine.setText(vacFormat);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(Covid19Activity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-        RequestQueue requestQueue = Volley.newRequestQueue(Covid19Activity.this);
-        requestQueue.add(request);
-    }
 
     private void Anhxa() {
         imageView6Buoc  = findViewById(R.id.quyTrinh6Buoc);

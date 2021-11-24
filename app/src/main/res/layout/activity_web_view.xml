@@ -29,7 +29,7 @@
                 android:id="@+id/backWeb"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginLeft="185dp"
+                android:layout_marginStart="185dp"
                 android:src="@drawable/next_next"
                 android:layout_toEndOf="@id/news"/>
         </RelativeLayout>

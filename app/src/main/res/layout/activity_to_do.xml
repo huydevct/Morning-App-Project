@@ -26,7 +26,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginLeft="190dp"
+            android:layout_marginStart="190dp"
             android:gravity="center"
             android:text="To Do List"
             android:textColor="#00FFE7"

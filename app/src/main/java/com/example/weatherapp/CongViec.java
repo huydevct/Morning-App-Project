@@ -1,8 +1,8 @@
 package com.example.weatherapp;
 
 public class CongViec {
-    private int IdCV;
-    private String TenCV;
+    private final int IdCV;
+    private final String TenCV;
 
     public CongViec(int idCV, String tenCV) {
         IdCV = idCV;

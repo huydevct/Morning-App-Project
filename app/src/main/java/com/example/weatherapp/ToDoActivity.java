@@ -57,7 +57,7 @@ public class ToDoActivity extends AppCompatActivity {
         // tao database
         database = new Database(this, "ghichu.sqlite", null, 1);
 
-        // tao ghi chu
+        // tao bang database ghi chu
         database.QueryData("CREATE TABLE IF NOT EXISTS CongViec(Id INTEGER PRIMARY KEY AUTOINCREMENT, TenCV VARCHAR(200))");
 
         GetDataCongViec();

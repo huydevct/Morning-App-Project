@@ -21,7 +21,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     ImageView imgWeather, imgNews, imgCovid, imgTodo;
-//    String first = "appear";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +29,6 @@ public class MainActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.side_in_right, R.anim.side_out_left);
 
         Anhxa();
-
-//        Intent intent = getIntent();
-//        String firstNews = intent.getStringExtra("check");
-//        Log.v("first", firstNews);
-//        welcome(first);
 
         Toast.makeText(MainActivity.this, "Welcome!", Toast.LENGTH_SHORT).show();
 
@@ -67,16 +61,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-//    private void welcome(String first){
-//        if (first.equals("appear")){
-//            Toast.makeText(MainActivity.this, "Welcome!", Toast.LENGTH_SHORT).show();
-//        }else if(first.equals("hide")){
-//            return;
-//        }else{
-//            first = "hide";
-//        }
-//    }
 
     private void Anhxa(){
         imgWeather      = findViewById(R.id.imageButtonWeather);

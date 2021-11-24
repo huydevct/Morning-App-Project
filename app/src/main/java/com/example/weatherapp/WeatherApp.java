@@ -18,7 +18,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.bumptech.glide.Glide;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -76,11 +75,11 @@ public class WeatherApp extends AppCompatActivity {
 
     // fix string tu Ha Noi -> Hanoi
     public static String FixString(String string){
-        String string1[] = string.split("\\s");
+        String[] string1 = string.split("\\s");
         StringBuilder result = new StringBuilder();
         string1[0].toUpperCase();
-        for (int i=0; i<string1.length; i++){
-            result.append(string1[i]);
+        for (String s : string1) {
+            result.append(s);
         }
         return result.toString();
     }
@@ -105,8 +104,8 @@ public class WeatherApp extends AppCompatActivity {
 
                             // định dạng lại và setText cho Ngày
                             String day = jsonObject.getString("dt");
-                            long lday = Long.valueOf(day);
-                            Date date = new Date(lday*1000L);
+                            long lDay = Long.valueOf(day);
+                            Date date = new Date(lDay*1000L);
                             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm a");
                             String Day = simpleDateFormat.format(date);
                             txtDay.setText(Day);

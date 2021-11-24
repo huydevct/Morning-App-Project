@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:textColor="#2C0505"
             android:gravity="center"
-            android:layout_marginLeft="2dp"
+            android:layout_marginStart="2dp"
             android:text="Ngày Tháng"
             android:textSize="24sp" />
         <TextView
@@ -33,7 +33,7 @@
     <LinearLayout
         android:layout_weight="1.25"
         android:layout_width="0dp"
-        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
         android:layout_height="wrap_content">
         <LinearLayout
             android:gravity="center"

@@ -45,10 +45,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             }
         });
 
-        holder.mtime.setText("Published At:-"+modelClasses.get(position).getPublishedAt());
-        holder.mauthor.setText(modelClasses.get(position).getAuthor());
-        holder.mheading.setText(modelClasses.get(position).getTitle());
-        holder.mcontent.setText(modelClasses.get(position).getDescription());
+        holder.time.setText("Published At:-"+modelClasses.get(position).getPublishedAt());
+        holder.author.setText(modelClasses.get(position).getAuthor());
+        holder.heading.setText(modelClasses.get(position).getTitle());
+        holder.content.setText(modelClasses.get(position).getDescription());
         //Glide lấy ảnh từ internet
         Glide.with(context).load(modelClasses.get(position).getUrlToImage()).into(holder.imageView);
 
@@ -60,16 +60,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
-        TextView mheading, mcontent, mauthor, mtime;
+        TextView heading, content, author, time;
         CardView cardView;
         ImageView imageView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            mheading    = itemView.findViewById(R.id.mainheading);
-            mcontent    = itemView.findViewById(R.id.content);
-            mauthor     = itemView.findViewById(R.id.author);
-            mtime       = itemView.findViewById(R.id.time);
+            heading    = itemView.findViewById(R.id.mainheading);
+            content    = itemView.findViewById(R.id.content);
+            author     = itemView.findViewById(R.id.author);
+            time       = itemView.findViewById(R.id.time);
             imageView   = itemView.findViewById(R.id.imageview);
             cardView    = itemView.findViewById(R.id.cardview);
         }

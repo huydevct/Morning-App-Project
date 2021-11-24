@@ -22,9 +22,8 @@ import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
 public class QR extends AppCompatActivity {
-//    private final int CAMERA_REQUEST_CODE = 101;
-    CodeScannerView codeScanner;
-    CodeScanner mcodeScanner;
+    CodeScannerView codeScannerView;
+    CodeScanner codeScanner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +34,10 @@ public class QR extends AppCompatActivity {
     }
 
     private void ReadCodeScanner(){
-        codeScanner = findViewById(R.id.QRview);
-        mcodeScanner = new CodeScanner(this, codeScanner);
+        codeScannerView = findViewById(R.id.QRview);
+        codeScanner = new CodeScanner(this, codeScannerView);
 
-        mcodeScanner.setDecodeCallback(new DecodeCallback() {
+        codeScanner.setDecodeCallback(new DecodeCallback() {
             @Override
             public void onDecoded(@NonNull Result result) {
                 runOnUiThread(new Runnable() {
@@ -51,10 +50,10 @@ public class QR extends AppCompatActivity {
                 });
             }
         });
-        codeScanner.setOnClickListener(new View.OnClickListener() {
+        codeScannerView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mcodeScanner.startPreview();
+                codeScanner.startPreview();
             }
         });
     }
@@ -68,7 +67,7 @@ public class QR extends AppCompatActivity {
         Dexter.withContext(this).withPermission(Manifest.permission.CAMERA).withListener(new PermissionListener() {
             @Override
             public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
-                mcodeScanner.startPreview();
+                codeScanner.startPreview();
             }
 
             @Override

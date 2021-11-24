@@ -31,7 +31,7 @@
                 android:id="@+id/back"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginLeft="210dp"
+                android:layout_marginStart="210dp"
                 android:layout_toEndOf="@id/textViewNewsFeed"
                 android:src="@drawable/next_next" />
         </RelativeLayout>
