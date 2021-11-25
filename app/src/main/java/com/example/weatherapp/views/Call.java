@@ -1,4 +1,4 @@
-package com.example.weatherapp;
+package com.example.weatherapp.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.example.weatherapp.R;
 
 public class Call<M> extends AppCompatActivity {
     private static final int MY_PERMISSION_REQUEST_CODE_CALL_PHONE = 555;

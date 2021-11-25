@@ -1,4 +1,6 @@
-package com.example.weatherapp;
+package com.example.weatherapp.controllers;
+
+import com.example.weatherapp.models.mainNews;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

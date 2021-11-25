@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#8EC2EC"
-    tools:context=".WeatherNextDay">
+    tools:context=".views.WeatherNextDay">
 
     <LinearLayout
         android:background="@drawable/linear_custom"

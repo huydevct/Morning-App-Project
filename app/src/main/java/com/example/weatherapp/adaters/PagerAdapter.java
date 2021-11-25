@@ -1,9 +1,16 @@
-package com.example.weatherapp;
+package com.example.weatherapp.adaters;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+
+import com.example.weatherapp.fragments.ScieneFragment;
+import com.example.weatherapp.fragments.SportsFragment;
+import com.example.weatherapp.fragments.TechFragment;
+import com.example.weatherapp.fragments.EntertainmentFragment;
+import com.example.weatherapp.fragments.HealthFragment;
+import com.example.weatherapp.fragments.HomeFragment;
 
 public class PagerAdapter extends FragmentPagerAdapter {
     int tabCount;

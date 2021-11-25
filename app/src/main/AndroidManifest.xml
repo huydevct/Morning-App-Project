@@ -16,13 +16,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WeatherApp">
         <activity
-            android:name=".webView"
+            android:name=".views.webView"
             android:exported="true" />
         <activity
-            android:name=".NewsApp"
+            android:name=".views.NewsApp"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".views.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,31 +31,31 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CDCHanoi"
+            android:name=".views.CDCHanoi"
             android:exported="true" />
         <activity
-            android:name=".QRDetail"
+            android:name=".views.QRDetail"
             android:exported="true" />
         <activity
-            android:name=".QR"
+            android:name=".views.QR"
             android:exported="true" />
         <activity
-            android:name=".Call"
+            android:name=".views.Call"
             android:exported="true" />
         <activity
-            android:name=".SMS"
+            android:name=".views.SMS"
             android:exported="true" />
         <activity
-            android:name=".ToDoActivity"
+            android:name=".views.ToDoActivity"
             android:exported="true" />
         <activity
-            android:name=".Covid19Activity"
+            android:name=".views.Covid19Activity"
             android:exported="true" />
         <activity
-            android:name=".WeatherNextDay"
+            android:name=".views.WeatherNextDay"
             android:exported="true" />
         <activity
-            android:name=".WeatherApp"
+            android:name=".views.WeatherApp"
             android:exported="true" />
 
         <meta-data

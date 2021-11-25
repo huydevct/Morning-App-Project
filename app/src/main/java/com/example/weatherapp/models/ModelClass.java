@@ -1,4 +1,4 @@
-package com.example.weatherapp;
+package com.example.weatherapp.models;
 
 public class ModelClass {
     private final String author, title, description, url, urlToImage, publishedAt;

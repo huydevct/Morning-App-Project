@@ -1,4 +1,4 @@
-package com.example.weatherapp;
+package com.example.weatherapp.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,30 +11,36 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.weatherapp.models.ModelClass;
+import com.example.weatherapp.R;
+import com.example.weatherapp.adaters.Adapter;
+import com.example.weatherapp.models.mainNews;
+import com.example.weatherapp.models.ApiUtilities;
+
 import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class HealthFragment extends Fragment {
+public class EntertainmentFragment extends Fragment {
     String api = "621001f34dd744df9922abc6ca875bfb";
     ArrayList<ModelClass> modelClassArrayList;
     Adapter adapter;
     String country="us";
-    private RecyclerView recyclerViewOfHealth;
-    private String category = "health";
+    private RecyclerView recyclerViewOfEnter;
+    private String category = "entertainment";
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view  = inflater.inflate(R.layout.healthfragment, null);
+        View view  = inflater.inflate(R.layout.entertainmentfragment, null);
 
-        recyclerViewOfHealth = view.findViewById(R.id.recyclerviewofhealth);
+        recyclerViewOfEnter = view.findViewById(R.id.recyclerviewofentertainment);
         modelClassArrayList = new ArrayList<>();
-        recyclerViewOfHealth.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerViewOfEnter.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new Adapter(getContext(), modelClassArrayList);
-        recyclerViewOfHealth.setAdapter(adapter);
+        recyclerViewOfEnter.setAdapter(adapter);
 
         findNews();
 

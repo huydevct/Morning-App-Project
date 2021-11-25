@@ -1,4 +1,4 @@
-package com.example.weatherapp;
+package com.example.weatherapp.adaters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -14,6 +14,9 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.weatherapp.models.ModelClass;
+import com.example.weatherapp.R;
+import com.example.weatherapp.views.webView;
 
 import java.util.ArrayList;
 

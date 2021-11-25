@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_homebg"
-    tools:context=".Covid19Activity">
+    tools:context=".views.Covid19Activity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/death"

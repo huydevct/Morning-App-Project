@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffff"
-    tools:context=".CDCHanoi">
+    tools:context=".views.CDCHanoi">
 
     <WebView
         android:id="@+id/webViewCDCHanoi"

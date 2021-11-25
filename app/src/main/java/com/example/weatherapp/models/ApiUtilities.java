@@ -1,4 +1,6 @@
-package com.example.weatherapp;
+package com.example.weatherapp.models;
+
+import com.example.weatherapp.controllers.ApiInterface;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

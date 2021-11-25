@@ -1,4 +1,4 @@
-package com.example.weatherapp;
+package com.example.weatherapp.adaters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,7 +10,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+import com.example.weatherapp.R;
+import com.example.weatherapp.models.ThoiTiet;
+import com.example.weatherapp.views.WeatherApp;
 
 import java.util.ArrayList;
 

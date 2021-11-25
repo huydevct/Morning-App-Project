@@ -1,8 +1,7 @@
-package com.example.weatherapp;
+package com.example.weatherapp.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-//import android.content.SharedPreferences;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -17,6 +16,11 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.weatherapp.R;
+import com.example.weatherapp.adaters.CongViecAdapter;
+import com.example.weatherapp.controllers.Database;
+import com.example.weatherapp.models.CongViec;
+
 import java.util.ArrayList;
 
 public class ToDoActivity extends AppCompatActivity {
@@ -25,14 +29,14 @@ public class ToDoActivity extends AppCompatActivity {
     ArrayList<CongViec> arrayList;
     CongViecAdapter adapter;
     ListView listView;
-    ImageView imagBack, imgAdd;
+    ImageView imageBack, imgAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_do);
 
-        imagBack = findViewById(R.id.imageViewBackToDo);
+        imageBack = findViewById(R.id.imageViewBackToDo);
         imgAdd   = findViewById(R.id.imageViewAdd);
 
         imgAdd.setOnClickListener(new View.OnClickListener() {
@@ -42,7 +46,7 @@ public class ToDoActivity extends AppCompatActivity {
             }
         });
 
-        imagBack.setOnClickListener(new View.OnClickListener() {
+        imageBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ToDoActivity.this, MainActivity.class));

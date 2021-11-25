@@ -1,6 +1,7 @@
-package com.example.weatherapp;
+package com.example.weatherapp.views;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -10,23 +11,26 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-public class CDCHanoi extends AppCompatActivity {
-    WebView webViewCDC;
-    ImageView imgBackCDC;
+import com.example.weatherapp.R;
+
+public class webView extends AppCompatActivity {
+    Toolbar toolbar;
+    WebView webView;
+    ImageView backWeb;
 
     @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cdchanoi);
-        overridePendingTransition(R.anim.side_in_right, R.anim.side_out_left);
+        setContentView(R.layout.activity_web_view);
 
-        imgBackCDC = findViewById(R.id.imageViewBackCDCHanoi);
-        webViewCDC = findViewById(R.id.webViewCDCHanoi);
+        toolbar = findViewById(R.id.toolbar);
+        backWeb = findViewById(R.id.backWeb);
+        webView = findViewById(R.id.webview);
+        setSupportActionBar(toolbar);
 
-        imgBackCDC.setOnClickListener(new View.OnClickListener() {
+        backWeb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
@@ -34,14 +38,14 @@ public class CDCHanoi extends AppCompatActivity {
         });
 
         Intent intent = getIntent();
-        String url = intent.getStringExtra("linkCDC");
+        String url = intent.getStringExtra("url");
 
-        webViewCDC.loadUrl(url);
-        webViewCDC.setWebViewClient(new WebViewClient());
-        WebSettings webSettings = webViewCDC.getSettings();
+        webView.setWebViewClient(new WebViewClient());
+        webView.loadUrl(url);
+
+        WebSettings webSettings = webView.getSettings();
         webSettings.setBuiltInZoomControls(true);
         webSettings.setDisplayZoomControls(false);
         webSettings.setJavaScriptEnabled(true);
-
     }
 }

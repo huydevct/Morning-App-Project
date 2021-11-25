@@ -1,4 +1,4 @@
-package com.example.weatherapp;
+package com.example.weatherapp.controllers;
 
 import android.content.Context;
 import android.database.Cursor;

@@ -1,4 +1,4 @@
-package com.example.weatherapp;
+package com.example.weatherapp.models;
 
 public class CongViec {
     private final int IdCV;

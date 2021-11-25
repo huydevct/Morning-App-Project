@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E65454"
-    tools:context=".ToDoActivity">
+    tools:context=".views.ToDoActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout4"

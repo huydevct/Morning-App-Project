@@ -1,4 +1,4 @@
-package com.example.weatherapp;
+package com.example.weatherapp.adaters;
 
 import android.content.Context;
 import android.graphics.Paint;
@@ -8,10 +8,12 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.weatherapp.R;
+import com.example.weatherapp.views.ToDoActivity;
+import com.example.weatherapp.models.CongViec;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.weatherapp;
+package com.example.weatherapp.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,30 +11,36 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.weatherapp.R;
+import com.example.weatherapp.adaters.Adapter;
+import com.example.weatherapp.models.ApiUtilities;
+import com.example.weatherapp.models.ModelClass;
+import com.example.weatherapp.models.mainNews;
+
 import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
-public class HomeFragment extends Fragment {
-    final String api = "621001f34dd744df9922abc6ca875bfb";
+public class SportsFragment extends Fragment {
+    String api = "621001f34dd744df9922abc6ca875bfb";
     ArrayList<ModelClass> modelClassArrayList;
     Adapter adapter;
     String country="us";
-    private RecyclerView recyclerViewOfHome;
+    private RecyclerView recyclerViewOfSports;
+    private String category = "sports";
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view  = inflater.inflate(R.layout.homefragment, null);
+        View view  = inflater.inflate(R.layout.sportsfragment, null);
 
-        recyclerViewOfHome = view.findViewById(R.id.recyclerviewofhome);
+        recyclerViewOfSports = view.findViewById(R.id.recyclerviewofsports);
         modelClassArrayList = new ArrayList<>();
-        recyclerViewOfHome.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerViewOfSports.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new Adapter(getContext(), modelClassArrayList);
-        recyclerViewOfHome.setAdapter(adapter);
+        recyclerViewOfSports.setAdapter(adapter);
 
         findNews();
 
@@ -42,9 +48,9 @@ public class HomeFragment extends Fragment {
     }
 
     private void findNews() {
-        ApiUtilities.getApiInterface().getNews(country, 100, api).enqueue(new Callback<mainNews>() {
+        ApiUtilities.getApiInterface().getCategoryNews(country, category, 100, api).enqueue(new Callback<mainNews>() {
             @Override
-            public void onResponse(Call<mainNews> call, Response<mainNews> response) {
+            public void onResponse(retrofit2.Call<mainNews> call, Response<mainNews> response) {
                 if (response.isSuccessful()){
                     modelClassArrayList.addAll(response.body().getArticles());
                     adapter.notifyDataSetChanged();

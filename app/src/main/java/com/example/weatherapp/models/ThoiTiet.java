@@ -1,4 +1,4 @@
-package com.example.weatherapp;
+package com.example.weatherapp.models;
 
 public class ThoiTiet {
     public String Day;

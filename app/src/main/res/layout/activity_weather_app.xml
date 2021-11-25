@@ -7,7 +7,7 @@
     android:padding="15dp"
     android:background="@drawable/bg_custom"
     android:orientation="vertical"
-    tools:context=".WeatherApp">
+    tools:context=".views.WeatherApp">
 
     <RelativeLayout
         android:layout_width="match_parent"

@@ -1,4 +1,4 @@
-package com.example.weatherapp;
+package com.example.weatherapp.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.weatherapp.R;
 
 public class QRDetail extends AppCompatActivity {
     TextView txtDetail;
