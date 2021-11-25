@@ -15,7 +15,7 @@ import com.example.weatherapp.models.ModelClass;
 import com.example.weatherapp.R;
 import com.example.weatherapp.adaters.Adapter;
 import com.example.weatherapp.models.mainNews;
-import com.example.weatherapp.models.ApiUtilities;
+import com.example.weatherapp.controllers.ApiUtilities;
 
 import java.util.ArrayList;
 

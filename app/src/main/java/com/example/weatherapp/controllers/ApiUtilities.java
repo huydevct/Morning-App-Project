@@ -1,4 +1,4 @@
-package com.example.weatherapp.models;
+package com.example.weatherapp.controllers;
 
 import com.example.weatherapp.controllers.ApiInterface;
 
