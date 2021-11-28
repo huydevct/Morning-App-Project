@@ -32,7 +32,7 @@ public class WeatherApp extends AppCompatActivity {
     Button btnSearch;
     LinearLayout linearChangeActivity;
     TextView txtCity, txtTemp, txtStatus, txtCloud, txtDay, txtWind, txtHumidity, txtMinTempMain, txtMaxTempMain, txtSunrise, txtSunset;
-    ImageView imgIcon, imagBack;
+    ImageView imgIcon, imageBack;
     String City = "";
     String cityChange = "";
 
@@ -45,7 +45,7 @@ public class WeatherApp extends AppCompatActivity {
         Anhxa();
         GetCurrentWeatherData("Hanoi");
 
-        imagBack.setOnClickListener(new View.OnClickListener() {
+        imageBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(WeatherApp.this, MainActivity.class));
@@ -67,7 +67,6 @@ public class WeatherApp extends AppCompatActivity {
         });
 
         linearChangeActivity.setOnClickListener(view -> {
-//            String city = edtSearch.getText().toString();
             Intent intent = new Intent(WeatherApp.this, WeatherNextDay.class);
             intent.putExtra("city", cityChange);
             startActivity(intent);
@@ -248,7 +247,7 @@ public class WeatherApp extends AppCompatActivity {
         }
     }
     private void Anhxa() {
-        imagBack            = findViewById(R.id.imageViewBackWeather);
+        imageBack            = findViewById(R.id.imageViewBackWeather);
         edtSearch           = findViewById(R.id.editTextSearch);
         btnSearch           = findViewById(R.id.buttonSearch);
         linearChangeActivity   = findViewById(R.id.linearChangeActivity);
