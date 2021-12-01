@@ -1,4 +1,4 @@
-package com.example.weatherapp.adaters;
+package com.example.weatherapp.controllers;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

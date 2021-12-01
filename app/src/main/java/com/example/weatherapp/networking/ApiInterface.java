@@ -1,4 +1,4 @@
-package com.example.weatherapp.controllers;
+package com.example.weatherapp.networking;
 
 import com.example.weatherapp.models.mainNews;
 

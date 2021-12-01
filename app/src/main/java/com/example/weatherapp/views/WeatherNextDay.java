@@ -16,7 +16,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.weatherapp.R;
-import com.example.weatherapp.adaters.CustomAdapter;
+import com.example.weatherapp.controllers.CustomAdapter;
 import com.example.weatherapp.models.ThoiTiet;
 
 import org.json.JSONArray;

@@ -1,4 +1,4 @@
-package com.example.weatherapp.adaters;
+package com.example.weatherapp.controllers;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

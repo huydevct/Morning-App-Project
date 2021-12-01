@@ -12,8 +12,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.weatherapp.R;
-import com.example.weatherapp.adaters.Adapter;
-import com.example.weatherapp.controllers.ApiUtilities;
+import com.example.weatherapp.controllers.Adapter;
+import com.example.weatherapp.networking.ApiUtilities;
 import com.example.weatherapp.models.ModelClass;
 import com.example.weatherapp.models.mainNews;
 

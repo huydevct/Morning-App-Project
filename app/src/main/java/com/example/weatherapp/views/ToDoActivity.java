@@ -17,8 +17,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.weatherapp.R;
-import com.example.weatherapp.adaters.CongViecAdapter;
-import com.example.weatherapp.controllers.Database;
+import com.example.weatherapp.controllers.CongViecAdapter;
+import com.example.weatherapp.networking.Database;
 import com.example.weatherapp.models.CongViec;
 
 import java.util.ArrayList;
